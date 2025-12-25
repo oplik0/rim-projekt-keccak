@@ -1,0 +1,44 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Dec 22 23:28:35 2025
+| Host         : DESKTOP-DI4989O running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 6 -file ./report/keccak_top_utilization_hierarchical_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : xck26-sfvc784-2LV-c
+| Speed File   : -2LV
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------------------------------------+---------------------------------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+|                          Instance                         |                                Module                               | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++-----------------------------------------------------------+---------------------------------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+| bd_0_wrapper                                              |                                                               (top) |      12510 |      12510 |       0 |    0 | 12227 |      0 |      0 |    0 |          0 |
+|   bd_0_i                                                  |                                                                bd_0 |      12510 |      12510 |       0 |    0 | 12227 |      0 |      0 |    0 |          0 |
+|     hls_inst                                              |                                                     bd_0_hls_inst_0 |      12510 |      12510 |       0 |    0 | 12227 |      0 |      0 |    0 |          0 |
+|       U0                                                  |                                          bd_0_hls_inst_0_keccak_top |      12510 |      12510 |       0 |    0 | 12227 |      0 |      0 |    0 |          0 |
+|         (U0)                                              |                                          bd_0_hls_inst_0_keccak_top |        162 |        162 |       0 |    0 | 10055 |      0 |      0 |    0 |          0 |
+|         control_s_axi_U                                   |                            bd_0_hls_inst_0_keccak_top_control_s_axi |         81 |         81 |       0 |    0 |    69 |      0 |      0 |    0 |          0 |
+|         grp_keccak_f1600_fu_4047                          |                             bd_0_hls_inst_0_keccak_top_keccak_f1600 |       7216 |       7216 |       0 |    0 |  1615 |      0 |      0 |    0 |          0 |
+|           (grp_keccak_f1600_fu_4047)                      |                             bd_0_hls_inst_0_keccak_top_keccak_f1600 |       4345 |       4345 |       0 |    0 |  1606 |      0 |      0 |    0 |          0 |
+|           flow_control_loop_pipe_sequential_init_U        | bd_0_hls_inst_0_keccak_top_flow_control_loop_pipe_sequential_init_6 |       2864 |       2864 |       0 |    0 |     2 |      0 |      0 |    0 |          0 |
+|         grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103     |        bd_0_hls_inst_0_keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK |        758 |        758 |       0 |    0 |   155 |      0 |      0 |    0 |          0 |
+|           (grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103) |        bd_0_hls_inst_0_keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK |        701 |        701 |       0 |    0 |   153 |      0 |      0 |    0 |          0 |
+|           flow_control_loop_pipe_sequential_init_U        |   bd_0_hls_inst_0_keccak_top_flow_control_loop_pipe_sequential_init |         57 |         57 |       0 |    0 |     2 |      0 |      0 |    0 |          0 |
+|         regslice_both_input_stream_V_data_V_U             |                            bd_0_hls_inst_0_keccak_top_regslice_both |         70 |         70 |       0 |    0 |   133 |      0 |      0 |    0 |          0 |
+|         regslice_both_output_stream_V_data_V_U            |                          bd_0_hls_inst_0_keccak_top_regslice_both_0 |         74 |         74 |       0 |    0 |   133 |      0 |      0 |    0 |          0 |
+|         sparsemux_51_5_64_1_1_U61                         |                    bd_0_hls_inst_0_keccak_top_sparsemux_51_5_64_1_1 |        514 |        514 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|         sparsemux_51_5_64_1_1_U62                         |                  bd_0_hls_inst_0_keccak_top_sparsemux_51_5_64_1_1_4 |       1510 |       1510 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|         sparsemux_51_5_64_1_1_U63                         |                  bd_0_hls_inst_0_keccak_top_sparsemux_51_5_64_1_1_5 |       2080 |       2080 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
++-----------------------------------------------------------+---------------------------------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+
+

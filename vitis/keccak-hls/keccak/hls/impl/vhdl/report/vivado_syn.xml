@@ -1,0 +1,170 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2025.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>5.000</TargetClockPeriod>
+  <AchievedClockPeriod>2.232</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>2.232</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>2.232</CP_SYNTH>
+  <CP_TARGET>5.000</CP_TARGET>
+  <SLACK_FINAL>2.768</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>2.768</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>2.768</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>2.768</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>0</BRAM>
+    <CLB>0</CLB>
+    <DSP>0</DSP>
+    <FF>12227</FF>
+    <LATCH>0</LATCH>
+    <LUT>12510</LUT>
+    <SRL>0</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>288</BRAM>
+    <CLB>0</CLB>
+    <DSP>1248</DSP>
+    <FF>234240</FF>
+    <LUT>117120</LUT>
+    <URAM>64</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="U0" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.vhd" ORIG_REF_NAME="keccak_top" TOP_CELL="bd_0_i/hls_inst/U0">
+    <SubModules count="13">control_s_axi_U grp_keccak_f1600_fu_4047 grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103 regslice_both_input_stream_V_data_V_U regslice_both_input_stream_V_keep_V_U regslice_both_input_stream_V_last_V_U regslice_both_output_stream_V_data_V_U regslice_both_output_stream_V_keep_V_U regslice_both_output_stream_V_last_V_U regslice_both_output_stream_V_strb_V_U sparsemux_51_5_64_1_1_U61 sparsemux_51_5_64_1_1_U62 sparsemux_51_5_64_1_1_U63</SubModules>
+    <Resources FF="12227" LUT="12510" LogicLUT="12510"/>
+    <LocalResources FF="10055" LUT="162" LogicLUT="162"/>
+  </RtlModule>
+  <RtlModule CELL="U0/control_s_axi_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_control_s_axi">
+    <Resources FF="69" LUT="81" LogicLUT="81"/>
+  </RtlModule>
+  <RtlModule CELL="U0/grp_keccak_f1600_fu_4047" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_keccak_f1600">
+    <SubModules count="2">RC_TABLE_U flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="1615" LUT="7216" LogicLUT="7216"/>
+    <LocalResources FF="1606" LUT="4345" LogicLUT="4345"/>
+  </RtlModule>
+  <RtlModule CELL="U0/grp_keccak_f1600_fu_4047/RC_TABLE_U" DEPTH="2" FILE_NAME="keccak_top_keccak_f1600.vhd" ORIG_REF_NAME="keccak_top_keccak_f1600_RC_TABLE_ROM_AUTO_1R">
+  </RtlModule>
+  <RtlModule CELL="U0/grp_keccak_f1600_fu_4047/flow_control_loop_pipe_sequential_init_U" DEPTH="2" FILE_NAME="keccak_top_keccak_f1600.vhd" ORIG_REF_NAME="keccak_top_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="2864" LogicLUT="2864"/>
+  </RtlModule>
+  <RtlModule CELL="U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="155" LUT="758" LogicLUT="758"/>
+    <LocalResources FF="153" LUT="701" LogicLUT="701"/>
+  </RtlModule>
+  <RtlModule CELL="U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U" DEPTH="2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" ORIG_REF_NAME="keccak_top_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="57" LogicLUT="57"/>
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_input_stream_V_data_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+    <Resources FF="133" LUT="70" LogicLUT="70"/>
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_input_stream_V_keep_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_input_stream_V_last_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_output_stream_V_data_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+    <Resources FF="133" LUT="74" LogicLUT="74"/>
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_output_stream_V_keep_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_output_stream_V_last_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="U0/regslice_both_output_stream_V_strb_V_U" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U61" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_sparsemux_51_5_64_1_1">
+    <Resources LUT="514" LogicLUT="514"/>
+  </RtlModule>
+  <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U62" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_sparsemux_51_5_64_1_1">
+    <Resources LUT="1510" LogicLUT="1510"/>
+  </RtlModule>
+  <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U63" DEPTH="1" FILE_NAME="keccak_top.vhd" ORIG_REF_NAME="keccak_top_sparsemux_51_5_64_1_1">
+    <Resources LUT="2080" LogicLUT="2080"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="2.228" DATAPATH_LOGIC_DELAY="1.195" DATAPATH_NET_DELAY="1.033" ENDPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]/D" LOGIC_LEVELS="8" MAX_FANOUT="97" SLACK="2.768" STARTPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C">
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="keccak_top.vhd" LINE_NUMBER="11"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="2.217" DATAPATH_LOGIC_DELAY="1.185" DATAPATH_NET_DELAY="1.032" ENDPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]/D" LOGIC_LEVELS="8" MAX_FANOUT="97" SLACK="2.778" STARTPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C">
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="keccak_top.vhd" LINE_NUMBER="11"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="2.214" DATAPATH_LOGIC_DELAY="1.181" DATAPATH_NET_DELAY="1.033" ENDPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]/D" LOGIC_LEVELS="8" MAX_FANOUT="97" SLACK="2.781" STARTPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C">
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="keccak_top.vhd" LINE_NUMBER="11"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="2.174" DATAPATH_LOGIC_DELAY="1.143" DATAPATH_NET_DELAY="1.031" ENDPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]/D" LOGIC_LEVELS="8" MAX_FANOUT="97" SLACK="2.822" STARTPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C">
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="keccak_top.vhd" LINE_NUMBER="11"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="2.171" DATAPATH_LOGIC_DELAY="1.138" DATAPATH_NET_DELAY="1.033" ENDPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]/D" LOGIC_LEVELS="8" MAX_FANOUT="97" SLACK="2.824" STARTPOINT_PIN="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C">
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="564"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="keccak_top.vhd" LINE_NUMBER="11"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="432"/>
+    <CELL NAME="bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.vhd" LINE_NUMBER="446"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="vhdl/report/keccak_top_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="vhdl/report/keccak_top_failfast_synth.rpt"/>
+  <ReportFile TYPE="power" PATH="vhdl/report/keccak_top_power_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="vhdl/report/keccak_top_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="vhdl/report/keccak_top_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="vhdl/report/keccak_top_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="vhdl/report/keccak_top_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

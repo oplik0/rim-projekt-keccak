@@ -1,0 +1,238 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'keccak_top_Pipeline_ABSORB_BLOCK'" level="0">
+<item name = "Date">Mon Dec 22 22:18:16 2025
+</item>
+<item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
+<item name = "Project">example</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00 ns, 1.847 ns, 1.35 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">2, 34, 10.000 ns, 0.170 us, 0, 0, loop pipeline stp</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- ABSORB_BLOCK">0, 32, 2, 1, 1, 0 ~ 32, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 100, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 0, 125, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 279, -</column>
+<column name="Register">-, -, 15, -, -</column>
+<specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="sparsemux_51_5_64_1_1_U1">sparsemux_51_5_64_1_1, 0, 0, 0, 125, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln300_fu_565_p2">+, 0, 0, 13, 6, 1</column>
+<column name="ap_block_pp0_stage0_01001_grp1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter1_grp1">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_1_nbreadreq_fu_188_p6">and, 0, 0, 2, 1, 0</column>
+<column name="icmp_ln300_fu_559_p2">icmp, 0, 0, 13, 6, 6</column>
+<column name="message_done_2_fu_782_p2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="state_25_fu_695_p2">xor, 0, 0, 64, 64, 64</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_i_2">9, 2, 6, 12</column>
+<column name="i_fu_168">9, 2, 6, 12</column>
+<column name="input_stream_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="message_done_1_fu_172">9, 2, 1, 2</column>
+<column name="state_10_o">9, 2, 64, 128</column>
+<column name="state_11_o">9, 2, 64, 128</column>
+<column name="state_12_o">9, 2, 64, 128</column>
+<column name="state_13_o">9, 2, 64, 128</column>
+<column name="state_14_o">9, 2, 64, 128</column>
+<column name="state_15_o">9, 2, 64, 128</column>
+<column name="state_16_o">9, 2, 64, 128</column>
+<column name="state_17_o">9, 2, 64, 128</column>
+<column name="state_18_o">9, 2, 64, 128</column>
+<column name="state_19_o">9, 2, 64, 128</column>
+<column name="state_1_o">9, 2, 64, 128</column>
+<column name="state_20_o">9, 2, 64, 128</column>
+<column name="state_21_o">9, 2, 64, 128</column>
+<column name="state_22_o">9, 2, 64, 128</column>
+<column name="state_23_o">9, 2, 64, 128</column>
+<column name="state_24_o">9, 2, 64, 128</column>
+<column name="state_2_o">9, 2, 64, 128</column>
+<column name="state_3_o">9, 2, 64, 128</column>
+<column name="state_4_o">9, 2, 64, 128</column>
+<column name="state_5_o">9, 2, 64, 128</column>
+<column name="state_6_o">9, 2, 64, 128</column>
+<column name="state_7_o">9, 2, 64, 128</column>
+<column name="state_8_o">9, 2, 64, 128</column>
+<column name="state_9_o">9, 2, 64, 128</column>
+<column name="state_o">9, 2, 64, 128</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="i_fu_168">6, 0, 6, 0</column>
+<column name="message_done_1_fu_172">1, 0, 1, 0</column>
+<column name="trunc_ln300_reg_815">5, 0, 5, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, keccak_top_Pipeline_ABSORB_BLOCK, return value</column>
+<column name="input_stream_TVALID">in, 1, axis, input_stream_V_data_V, pointer</column>
+<column name="input_stream_TDATA">in, 64, axis, input_stream_V_data_V, pointer</column>
+<column name="message_done">in, 1, ap_none, message_done, scalar</column>
+<column name="trunc_ln1">in, 6, ap_none, trunc_ln1, scalar</column>
+<column name="state_24_i">in, 64, ap_ovld, state_24, pointer</column>
+<column name="state_24_o">out, 64, ap_ovld, state_24, pointer</column>
+<column name="state_24_o_ap_vld">out, 1, ap_ovld, state_24, pointer</column>
+<column name="state_23_i">in, 64, ap_ovld, state_23, pointer</column>
+<column name="state_23_o">out, 64, ap_ovld, state_23, pointer</column>
+<column name="state_23_o_ap_vld">out, 1, ap_ovld, state_23, pointer</column>
+<column name="state_22_i">in, 64, ap_ovld, state_22, pointer</column>
+<column name="state_22_o">out, 64, ap_ovld, state_22, pointer</column>
+<column name="state_22_o_ap_vld">out, 1, ap_ovld, state_22, pointer</column>
+<column name="state_21_i">in, 64, ap_ovld, state_21, pointer</column>
+<column name="state_21_o">out, 64, ap_ovld, state_21, pointer</column>
+<column name="state_21_o_ap_vld">out, 1, ap_ovld, state_21, pointer</column>
+<column name="state_20_i">in, 64, ap_ovld, state_20, pointer</column>
+<column name="state_20_o">out, 64, ap_ovld, state_20, pointer</column>
+<column name="state_20_o_ap_vld">out, 1, ap_ovld, state_20, pointer</column>
+<column name="state_19_i">in, 64, ap_ovld, state_19, pointer</column>
+<column name="state_19_o">out, 64, ap_ovld, state_19, pointer</column>
+<column name="state_19_o_ap_vld">out, 1, ap_ovld, state_19, pointer</column>
+<column name="state_18_i">in, 64, ap_ovld, state_18, pointer</column>
+<column name="state_18_o">out, 64, ap_ovld, state_18, pointer</column>
+<column name="state_18_o_ap_vld">out, 1, ap_ovld, state_18, pointer</column>
+<column name="state_17_i">in, 64, ap_ovld, state_17, pointer</column>
+<column name="state_17_o">out, 64, ap_ovld, state_17, pointer</column>
+<column name="state_17_o_ap_vld">out, 1, ap_ovld, state_17, pointer</column>
+<column name="state_16_i">in, 64, ap_ovld, state_16, pointer</column>
+<column name="state_16_o">out, 64, ap_ovld, state_16, pointer</column>
+<column name="state_16_o_ap_vld">out, 1, ap_ovld, state_16, pointer</column>
+<column name="state_15_i">in, 64, ap_ovld, state_15, pointer</column>
+<column name="state_15_o">out, 64, ap_ovld, state_15, pointer</column>
+<column name="state_15_o_ap_vld">out, 1, ap_ovld, state_15, pointer</column>
+<column name="state_14_i">in, 64, ap_ovld, state_14, pointer</column>
+<column name="state_14_o">out, 64, ap_ovld, state_14, pointer</column>
+<column name="state_14_o_ap_vld">out, 1, ap_ovld, state_14, pointer</column>
+<column name="state_13_i">in, 64, ap_ovld, state_13, pointer</column>
+<column name="state_13_o">out, 64, ap_ovld, state_13, pointer</column>
+<column name="state_13_o_ap_vld">out, 1, ap_ovld, state_13, pointer</column>
+<column name="state_12_i">in, 64, ap_ovld, state_12, pointer</column>
+<column name="state_12_o">out, 64, ap_ovld, state_12, pointer</column>
+<column name="state_12_o_ap_vld">out, 1, ap_ovld, state_12, pointer</column>
+<column name="state_11_i">in, 64, ap_ovld, state_11, pointer</column>
+<column name="state_11_o">out, 64, ap_ovld, state_11, pointer</column>
+<column name="state_11_o_ap_vld">out, 1, ap_ovld, state_11, pointer</column>
+<column name="state_10_i">in, 64, ap_ovld, state_10, pointer</column>
+<column name="state_10_o">out, 64, ap_ovld, state_10, pointer</column>
+<column name="state_10_o_ap_vld">out, 1, ap_ovld, state_10, pointer</column>
+<column name="state_9_i">in, 64, ap_ovld, state_9, pointer</column>
+<column name="state_9_o">out, 64, ap_ovld, state_9, pointer</column>
+<column name="state_9_o_ap_vld">out, 1, ap_ovld, state_9, pointer</column>
+<column name="state_8_i">in, 64, ap_ovld, state_8, pointer</column>
+<column name="state_8_o">out, 64, ap_ovld, state_8, pointer</column>
+<column name="state_8_o_ap_vld">out, 1, ap_ovld, state_8, pointer</column>
+<column name="state_7_i">in, 64, ap_ovld, state_7, pointer</column>
+<column name="state_7_o">out, 64, ap_ovld, state_7, pointer</column>
+<column name="state_7_o_ap_vld">out, 1, ap_ovld, state_7, pointer</column>
+<column name="state_6_i">in, 64, ap_ovld, state_6, pointer</column>
+<column name="state_6_o">out, 64, ap_ovld, state_6, pointer</column>
+<column name="state_6_o_ap_vld">out, 1, ap_ovld, state_6, pointer</column>
+<column name="state_5_i">in, 64, ap_ovld, state_5, pointer</column>
+<column name="state_5_o">out, 64, ap_ovld, state_5, pointer</column>
+<column name="state_5_o_ap_vld">out, 1, ap_ovld, state_5, pointer</column>
+<column name="state_4_i">in, 64, ap_ovld, state_4, pointer</column>
+<column name="state_4_o">out, 64, ap_ovld, state_4, pointer</column>
+<column name="state_4_o_ap_vld">out, 1, ap_ovld, state_4, pointer</column>
+<column name="state_3_i">in, 64, ap_ovld, state_3, pointer</column>
+<column name="state_3_o">out, 64, ap_ovld, state_3, pointer</column>
+<column name="state_3_o_ap_vld">out, 1, ap_ovld, state_3, pointer</column>
+<column name="state_2_i">in, 64, ap_ovld, state_2, pointer</column>
+<column name="state_2_o">out, 64, ap_ovld, state_2, pointer</column>
+<column name="state_2_o_ap_vld">out, 1, ap_ovld, state_2, pointer</column>
+<column name="state_1_i">in, 64, ap_ovld, state_1, pointer</column>
+<column name="state_1_o">out, 64, ap_ovld, state_1, pointer</column>
+<column name="state_1_o_ap_vld">out, 1, ap_ovld, state_1, pointer</column>
+<column name="state_i">in, 64, ap_ovld, state, pointer</column>
+<column name="state_o">out, 64, ap_ovld, state, pointer</column>
+<column name="state_o_ap_vld">out, 1, ap_ovld, state, pointer</column>
+<column name="input_stream_TREADY">out, 1, axis, input_stream_V_last_V, pointer</column>
+<column name="input_stream_TLAST">in, 1, axis, input_stream_V_last_V, pointer</column>
+<column name="input_stream_TKEEP">in, 8, axis, input_stream_V_keep_V, pointer</column>
+<column name="input_stream_TSTRB">in, 8, axis, input_stream_V_strb_V, pointer</column>
+<column name="message_done_1_out">out, 1, ap_vld, message_done_1_out, pointer</column>
+<column name="message_done_1_out_ap_vld">out, 1, ap_vld, message_done_1_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

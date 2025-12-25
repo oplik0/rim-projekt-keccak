@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_pkg.vhd" \
+"../../../../keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_f1600.vhd" \
+"../../../../keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_top.vhd" \
+"../../../../keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_top_control_s_axi.vhd" \
+"../../../../keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_tb.vhd" \
+
+# Do not sort compile order
+nosort

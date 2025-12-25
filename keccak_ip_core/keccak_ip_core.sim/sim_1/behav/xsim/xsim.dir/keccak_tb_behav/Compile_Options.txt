@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "keccak_tb_behav" "xil_defaultlib.keccak_tb" -log "elaborate.log" 

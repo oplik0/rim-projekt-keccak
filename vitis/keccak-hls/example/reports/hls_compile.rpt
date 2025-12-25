@@ -1,0 +1,360 @@
+
+
+================================================================
+== Synthesis Summary Report of 'keccak_top'
+================================================================
++ General Information: 
+    * Date:           Mon Dec 22 22:18:18 2025
+    * Version:        2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:        example
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
+* Performance & Resource Estimates: 
++---------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+----+------------+-------------+-----+
+|                Modules                | Issue|               | Iteration|         | Trip |          |       Latency       |      |         |    |            |             |     |
+|                & Loops                | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|    (ns)   | Slack|  BRAM   | DSP|     FF     |     LUT     | URAM|
++---------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+----+------------+-------------+-----+
+|+ keccak_top                           |     -|              -|         -|    64579|     -|        no|    64578|  3.229e+05|  0.22|  2 (~0%)|   -|   9056 (3%)|  12458 (10%)|    -|
+| o ABSORB_LOOP                         |     -|              -|        64|        -|  1000|        no|    64000|  3.200e+05|  3.65|        -|   -|           -|            -|    -|
+|  + keccak_top_Pipeline_ABSORB_BLOCK   |     -|              -|         -|        -|     -|       yes|       34|    170.000|  1.80|        -|   -|    15 (~0%)|    504 (~0%)|    -|
+|   o ABSORB_BLOCK                      |     -|              -|         2|        1|    32|       yes|       32|    160.000|  3.65|        -|   -|           -|            -|    -|
+|  + keccak_f1600                       |     -|              -|         -|        -|     -|       yes|       26|    130.000|  1.33|  2 (~0%)|   -|  1608 (~0%)|    8189 (6%)|    -|
+|   o KECCAK_ROUNDS_LOOP                |     -|              -|         2|        1|    24|       yes|       24|    120.000|  3.65|        -|   -|           -|            -|    -|
+| o SQUEEZE_LOOP                        |     -|              -|        64|        -|     8|        no|      512|  2.560e+03|  3.65|        -|   -|           -|            -|    -|
+|  + keccak_top_Pipeline_SQUEEZE_BLOCK  |     -|              -|         -|        -|     -|       yes|       34|    170.000|  0.77|        -|   -|   147 (~0%)|    474 (~0%)|    -|
+|   o SQUEEZE_BLOCK                     |     -|              -|         2|        1|    32|       yes|       32|    160.000|  3.65|        -|   -|           -|            -|    -|
++---------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+----+------------+-------------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | rate_bytes | 0x10   | 32    | W      | Data signal of rate_bytes        |                                                                      |
+| s_axi_control | delimiter  | 0x18   | 32    | W      | Data signal of delimiter         |                                                                      |
+| s_axi_control | output_len | 0x20   | 32    | W      | Data signal of output_len        |                                                                      |
+| s_axi_control | input_len  | 0x28   | 32    | W      | Data signal of input_len         |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++---------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface     | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++---------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| input_stream  | in        | both          | 64    | 8     | 1     | 1      | 8     | 1      |
+| output_stream | out       | both          | 64    | 8     | 1     | 1      | 8     | 1      |
++---------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+------------------------------------------------------------------------------+
+| Argument      | Direction | Datatype                                                                     |
++---------------+-----------+------------------------------------------------------------------------------+
+| input_stream  | in        | stream<hls::axis<ap_uint<64>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| output_stream | out       | stream<hls::axis<ap_uint<64>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| rate_bytes    | in        | ap_uint<8>                                                                   |
+| delimiter     | in        | ap_uint<8>                                                                   |
+| output_len    | in        | ap_uint<16>                                                                  |
+| input_len     | in        | ap_uint<32>                                                                  |
++---------------+-----------+------------------------------------------------------------------------------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+--------------------------------------+
+| Argument      | HW Interface  | HW Type   | HW Info                              |
++---------------+---------------+-----------+--------------------------------------+
+| input_stream  | input_stream  | interface |                                      |
+| output_stream | output_stream | interface |                                      |
+| rate_bytes    | s_axi_control | register  | name=rate_bytes offset=0x10 range=32 |
+| delimiter     | s_axi_control | register  | name=delimiter offset=0x18 range=32  |
+| output_len    | s_axi_control | register  | name=output_len offset=0x20 range=32 |
+| input_len     | s_axi_control | register  | name=input_len offset=0x28 range=32  |
++---------------+---------------+-----------+--------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+--------------------+-----------+--------------------------+---------+
+| Name                                 | DSP | Pragma | Variable           | Op        | Impl                     | Latency |
++--------------------------------------+-----+--------+--------------------+-----------+--------------------------+---------+
+| + keccak_top                         | 0   |        |                    |           |                          |         |
+|   icmp_ln292_fu_5128_p2              |     |        | icmp_ln292         | setgt     | auto                     | 0       |
+|   xor_ln292_fu_5134_p2               |     |        | xor_ln292          | xor       | auto                     | 0       |
+|   and_ln292_fu_5140_p2               |     |        | and_ln292          | and       | auto                     | 0       |
+|   icmp_ln295_fu_5150_p2              |     |        | icmp_ln295         | setgt     | auto                     | 0       |
+|   block_bytes_fu_5155_p3             |     |        | block_bytes        | select    | auto_sel                 | 0       |
+|   add_ln296_fu_5170_p2               |     |        | add_ln296          | add       | fabric                   | 0       |
+|   bytes_remaining_3_fu_5187_p2       |     |        | bytes_remaining_3  | sub       | fabric                   | 0       |
+|   icmp_ln317_fu_5205_p2              |     |        | icmp_ln317         | setlt     | auto                     | 0       |
+|   icmp_ln317_1_fu_5193_p2            |     |        | icmp_ln317_1       | setlt     | auto                     | 0       |
+|   or_ln317_fu_5210_p2                |     |        | or_ln317           | or        | auto                     | 0       |
+|   and_ln317_fu_5215_p2               |     |        | and_ln317          | and       | auto                     | 0       |
+|   urem_32ns_8ns_32_36_seq_1_U94      |     |        | offset_bytes       | urem      | auto_seq                 | 35      |
+|   shl_ln209_fu_5379_p2               |     |        | shl_ln209          | shl       | auto_pipe                | 0       |
+|   sparsemux_51_5_64_1_1_U95          |     |        | tmp                | sparsemux | compactencoding_dontcare | 0       |
+|   state_52_fu_5493_p2                |     |        | state_52           | xor       | auto                     | 0       |
+|   add_ln212_fu_5553_p2               |     |        | add_ln212          | add       | fabric                   | 0       |
+|   sub_ln212_fu_5570_p2               |     |        | sub_ln212          | sub       | fabric                   | 0       |
+|   sub_ln212_1_fu_5586_p2             |     |        | sub_ln212_1        | sub       | fabric                   | 0       |
+|   last_lane_idx_fu_5602_p3           |     |        | last_lane_idx      | select    | auto_sel                 | 0       |
+|   sub_ln213_fu_5621_p2               |     |        | sub_ln213          | sub       | fabric                   | 0       |
+|   sub_ln213_1_fu_5631_p2             |     |        | sub_ln213_1        | sub       | fabric                   | 0       |
+|   last_byte_idx_fu_5637_p3           |     |        | last_byte_idx      | select    | auto_sel                 | 0       |
+|   shl_ln214_fu_5681_p2               |     |        | shl_ln214          | shl       | auto_pipe                | 0       |
+|   sub_ln214_fu_5657_p2               |     |        | sub_ln214          | sub       | fabric                   | 0       |
+|   lshr_ln214_fu_5694_p2              |     |        | lshr_ln214         | lshr      | auto_pipe                | 0       |
+|   cond_i_i_fu_5700_p3                |     |        | cond_i_i           | select    | auto_sel                 | 0       |
+|   sparsemux_51_5_64_1_1_U96          |     |        | tmp_3              | sparsemux | compactencoding_dontcare | 0       |
+|   state_103_fu_5815_p2               |     |        | state_103          | xor       | auto                     | 0       |
+|   icmp_ln340_fu_6060_p2              |     |        | icmp_ln340         | setgt     | auto                     | 0       |
+|   icmp_ln343_fu_6071_p2              |     |        | icmp_ln343         | setgt     | auto                     | 0       |
+|   select_ln343_fu_6080_p3            |     |        | select_ln343       | select    | auto_sel                 | 0       |
+|   add_ln344_fu_6091_p2               |     |        | add_ln344          | add       | fabric                   | 0       |
+|   icmp_ln364_fu_6111_p2              |     |        | icmp_ln364         | setgt     | auto                     | 0       |
+|  + keccak_top_Pipeline_ABSORB_BLOCK  | 0   |        |                    |           |                          |         |
+|    icmp_ln300_fu_559_p2              |     |        | icmp_ln300         | seteq     | auto                     | 0       |
+|    add_ln300_fu_565_p2               |     |        | add_ln300          | add       | fabric                   | 0       |
+|    sparsemux_51_5_64_1_1_U1          |     |        | tmp_2              | sparsemux | compactencoding_dontcare | 0       |
+|    state_25_fu_695_p2                |     |        | state_25           | xor       | auto                     | 0       |
+|    message_done_2_fu_782_p2          |     |        | message_done_2     | or        | auto                     | 0       |
+|  + keccak_f1600                      | 0   |        |                    |           |                          |         |
+|    icmp_ln149_fu_628_p2              |     |        | icmp_ln149         | seteq     | auto                     | 0       |
+|    add_ln149_fu_634_p2               |     |        | add_ln149          | add       | fabric                   | 0       |
+|    xor_ln50_fu_725_p2                |     |        | xor_ln50           | xor       | auto                     | 0       |
+|    xor_ln50_1_fu_731_p2              |     |        | xor_ln50_1         | xor       | auto                     | 0       |
+|    xor_ln50_2_fu_737_p2              |     |        | xor_ln50_2         | xor       | auto                     | 0       |
+|    x_4_fu_743_p2                     |     |        | x_4                | xor       | auto                     | 0       |
+|    xor_ln50_4_fu_749_p2              |     |        | xor_ln50_4         | xor       | auto                     | 0       |
+|    xor_ln50_5_fu_755_p2              |     |        | xor_ln50_5         | xor       | auto                     | 0       |
+|    xor_ln50_6_fu_761_p2              |     |        | xor_ln50_6         | xor       | auto                     | 0       |
+|    x_fu_767_p2                       |     |        | x                  | xor       | auto                     | 0       |
+|    xor_ln50_8_fu_773_p2              |     |        | xor_ln50_8         | xor       | auto                     | 0       |
+|    xor_ln50_9_fu_779_p2              |     |        | xor_ln50_9         | xor       | auto                     | 0       |
+|    xor_ln50_10_fu_785_p2             |     |        | xor_ln50_10        | xor       | auto                     | 0       |
+|    x_1_fu_791_p2                     |     |        | x_1                | xor       | auto                     | 0       |
+|    xor_ln50_12_fu_797_p2             |     |        | xor_ln50_12        | xor       | auto                     | 0       |
+|    xor_ln50_13_fu_803_p2             |     |        | xor_ln50_13        | xor       | auto                     | 0       |
+|    xor_ln50_14_fu_809_p2             |     |        | xor_ln50_14        | xor       | auto                     | 0       |
+|    x_2_fu_815_p2                     |     |        | x_2                | xor       | auto                     | 0       |
+|    xor_ln50_16_fu_821_p2             |     |        | xor_ln50_16        | xor       | auto                     | 0       |
+|    xor_ln50_17_fu_827_p2             |     |        | xor_ln50_17        | xor       | auto                     | 0       |
+|    xor_ln50_18_fu_833_p2             |     |        | xor_ln50_18        | xor       | auto                     | 0       |
+|    x_3_fu_839_p2                     |     |        | x_3                | xor       | auto                     | 0       |
+|    xor_ln57_fu_865_p2                |     |        | xor_ln57           | xor       | auto                     | 0       |
+|    xor_ln57_1_fu_891_p2              |     |        | xor_ln57_1         | xor       | auto                     | 0       |
+|    xor_ln57_2_fu_917_p2              |     |        | xor_ln57_2         | xor       | auto                     | 0       |
+|    xor_ln57_3_fu_943_p2              |     |        | xor_ln57_3         | xor       | auto                     | 0       |
+|    xor_ln57_4_fu_969_p2              |     |        | xor_ln57_4         | xor       | auto                     | 0       |
+|    x_5_fu_975_p2                     |     |        | x_5                | xor       | auto                     | 0       |
+|    x_6_fu_981_p2                     |     |        | x_6                | xor       | auto                     | 0       |
+|    x_7_fu_987_p2                     |     |        | x_7                | xor       | auto                     | 0       |
+|    x_8_fu_993_p2                     |     |        | x_8                | xor       | auto                     | 0       |
+|    x_9_fu_999_p2                     |     |        | x_9                | xor       | auto                     | 0       |
+|    x_10_fu_1005_p2                   |     |        | x_10               | xor       | auto                     | 0       |
+|    x_11_fu_1011_p2                   |     |        | x_11               | xor       | auto                     | 0       |
+|    x_12_fu_1017_p2                   |     |        | x_12               | xor       | auto                     | 0       |
+|    x_13_fu_1023_p2                   |     |        | x_13               | xor       | auto                     | 0       |
+|    x_14_fu_1029_p2                   |     |        | x_14               | xor       | auto                     | 0       |
+|    x_15_fu_1035_p2                   |     |        | x_15               | xor       | auto                     | 0       |
+|    x_16_fu_1041_p2                   |     |        | x_16               | xor       | auto                     | 0       |
+|    x_17_fu_1047_p2                   |     |        | x_17               | xor       | auto                     | 0       |
+|    x_18_fu_1053_p2                   |     |        | x_18               | xor       | auto                     | 0       |
+|    x_19_fu_1059_p2                   |     |        | x_19               | xor       | auto                     | 0       |
+|    x_20_fu_1065_p2                   |     |        | x_20               | xor       | auto                     | 0       |
+|    x_21_fu_1071_p2                   |     |        | x_21               | xor       | auto                     | 0       |
+|    x_22_fu_1077_p2                   |     |        | x_22               | xor       | auto                     | 0       |
+|    x_23_fu_1083_p2                   |     |        | x_23               | xor       | auto                     | 0       |
+|    x_24_fu_1089_p2                   |     |        | x_24               | xor       | auto                     | 0       |
+|    x_25_fu_1095_p2                   |     |        | x_25               | xor       | auto                     | 0       |
+|    x_26_fu_1101_p2                   |     |        | x_26               | xor       | auto                     | 0       |
+|    x_27_fu_1107_p2                   |     |        | x_27               | xor       | auto                     | 0       |
+|    x_28_fu_1113_p2                   |     |        | x_28               | xor       | auto                     | 0       |
+|    xor_ln127_fu_1645_p2              |     |        | xor_ln127          | xor       | auto                     | 0       |
+|    or_ln127_fu_1651_p2               |     |        | or_ln127           | or        | auto                     | 0       |
+|    and_ln127_fu_1657_p2              |     |        | and_ln127          | and       | auto                     | 0       |
+|    xor_ln127_1_fu_1663_p2            |     |        | xor_ln127_1        | xor       | auto                     | 0       |
+|    xor_ln127_2_fu_1669_p2            |     |        | xor_ln127_2        | xor       | auto                     | 0       |
+|    and_ln127_1_fu_1675_p2            |     |        | and_ln127_1        | and       | auto                     | 0       |
+|    xor_ln127_3_fu_1681_p2            |     |        | xor_ln127_3        | xor       | auto                     | 0       |
+|    xor_ln127_4_fu_1687_p2            |     |        | xor_ln127_4        | xor       | auto                     | 0       |
+|    xor_ln127_5_fu_1693_p2            |     |        | xor_ln127_5        | xor       | auto                     | 0       |
+|    and_ln127_2_fu_1699_p2            |     |        | and_ln127_2        | and       | auto                     | 0       |
+|    xor_ln127_6_fu_1705_p2            |     |        | xor_ln127_6        | xor       | auto                     | 0       |
+|    xor_ln127_7_fu_1711_p2            |     |        | xor_ln127_7        | xor       | auto                     | 0       |
+|    and_ln127_3_fu_1717_p2            |     |        | and_ln127_3        | and       | auto                     | 0       |
+|    xor_ln127_8_fu_1723_p2            |     |        | xor_ln127_8        | xor       | auto                     | 0       |
+|    xor_ln127_9_fu_1729_p2            |     |        | xor_ln127_9        | xor       | auto                     | 0       |
+|    and_ln127_4_fu_1735_p2            |     |        | and_ln127_4        | and       | auto                     | 0       |
+|    xor_ln127_10_fu_1741_p2           |     |        | xor_ln127_10       | xor       | auto                     | 0       |
+|    xor_ln127_11_fu_1747_p2           |     |        | xor_ln127_11       | xor       | auto                     | 0       |
+|    and_ln127_5_fu_1753_p2            |     |        | and_ln127_5        | and       | auto                     | 0       |
+|    xor_ln127_12_fu_1759_p2           |     |        | xor_ln127_12       | xor       | auto                     | 0       |
+|    xor_ln127_13_fu_1765_p2           |     |        | xor_ln127_13       | xor       | auto                     | 0       |
+|    and_ln127_6_fu_1771_p2            |     |        | and_ln127_6        | and       | auto                     | 0       |
+|    xor_ln127_14_fu_1777_p2           |     |        | xor_ln127_14       | xor       | auto                     | 0       |
+|    xor_ln127_15_fu_1783_p2           |     |        | xor_ln127_15       | xor       | auto                     | 0       |
+|    and_ln127_7_fu_1789_p2            |     |        | and_ln127_7        | and       | auto                     | 0       |
+|    xor_ln127_16_fu_1795_p2           |     |        | xor_ln127_16       | xor       | auto                     | 0       |
+|    xor_ln127_17_fu_1801_p2           |     |        | xor_ln127_17       | xor       | auto                     | 0       |
+|    and_ln127_8_fu_1807_p2            |     |        | and_ln127_8        | and       | auto                     | 0       |
+|    xor_ln127_18_fu_1813_p2           |     |        | xor_ln127_18       | xor       | auto                     | 0       |
+|    xor_ln127_19_fu_1819_p2           |     |        | xor_ln127_19       | xor       | auto                     | 0       |
+|    and_ln127_9_fu_1825_p2            |     |        | and_ln127_9        | and       | auto                     | 0       |
+|    xor_ln127_20_fu_1831_p2           |     |        | xor_ln127_20       | xor       | auto                     | 0       |
+|    xor_ln127_21_fu_1837_p2           |     |        | xor_ln127_21       | xor       | auto                     | 0       |
+|    and_ln127_10_fu_1843_p2           |     |        | and_ln127_10       | and       | auto                     | 0       |
+|    xor_ln127_22_fu_1849_p2           |     |        | xor_ln127_22       | xor       | auto                     | 0       |
+|    xor_ln127_23_fu_1855_p2           |     |        | xor_ln127_23       | xor       | auto                     | 0       |
+|    and_ln127_11_fu_1861_p2           |     |        | and_ln127_11       | and       | auto                     | 0       |
+|    xor_ln127_24_fu_1867_p2           |     |        | xor_ln127_24       | xor       | auto                     | 0       |
+|    xor_ln127_25_fu_1873_p2           |     |        | xor_ln127_25       | xor       | auto                     | 0       |
+|    and_ln127_12_fu_1879_p2           |     |        | and_ln127_12       | and       | auto                     | 0       |
+|    xor_ln127_26_fu_1885_p2           |     |        | xor_ln127_26       | xor       | auto                     | 0       |
+|    xor_ln127_27_fu_1891_p2           |     |        | xor_ln127_27       | xor       | auto                     | 0       |
+|    and_ln127_13_fu_1897_p2           |     |        | and_ln127_13       | and       | auto                     | 0       |
+|    xor_ln127_28_fu_1903_p2           |     |        | xor_ln127_28       | xor       | auto                     | 0       |
+|    xor_ln127_29_fu_1909_p2           |     |        | xor_ln127_29       | xor       | auto                     | 0       |
+|    and_ln127_14_fu_1915_p2           |     |        | and_ln127_14       | and       | auto                     | 0       |
+|    xor_ln127_30_fu_1921_p2           |     |        | xor_ln127_30       | xor       | auto                     | 0       |
+|    xor_ln127_31_fu_1927_p2           |     |        | xor_ln127_31       | xor       | auto                     | 0       |
+|    and_ln127_15_fu_1933_p2           |     |        | and_ln127_15       | and       | auto                     | 0       |
+|    xor_ln127_32_fu_1939_p2           |     |        | xor_ln127_32       | xor       | auto                     | 0       |
+|    xor_ln127_33_fu_1945_p2           |     |        | xor_ln127_33       | xor       | auto                     | 0       |
+|    and_ln127_16_fu_1951_p2           |     |        | and_ln127_16       | and       | auto                     | 0       |
+|    xor_ln127_34_fu_1957_p2           |     |        | xor_ln127_34       | xor       | auto                     | 0       |
+|    xor_ln127_35_fu_1963_p2           |     |        | xor_ln127_35       | xor       | auto                     | 0       |
+|    and_ln127_17_fu_1969_p2           |     |        | and_ln127_17       | and       | auto                     | 0       |
+|    xor_ln127_36_fu_1975_p2           |     |        | xor_ln127_36       | xor       | auto                     | 0       |
+|    xor_ln127_37_fu_1981_p2           |     |        | xor_ln127_37       | xor       | auto                     | 0       |
+|    and_ln127_18_fu_1987_p2           |     |        | and_ln127_18       | and       | auto                     | 0       |
+|    xor_ln127_38_fu_1993_p2           |     |        | xor_ln127_38       | xor       | auto                     | 0       |
+|    xor_ln127_39_fu_1999_p2           |     |        | xor_ln127_39       | xor       | auto                     | 0       |
+|    and_ln127_19_fu_2005_p2           |     |        | and_ln127_19       | and       | auto                     | 0       |
+|    xor_ln127_40_fu_2011_p2           |     |        | xor_ln127_40       | xor       | auto                     | 0       |
+|    xor_ln127_41_fu_2017_p2           |     |        | xor_ln127_41       | xor       | auto                     | 0       |
+|    and_ln127_20_fu_2023_p2           |     |        | and_ln127_20       | and       | auto                     | 0       |
+|    xor_ln127_42_fu_2029_p2           |     |        | xor_ln127_42       | xor       | auto                     | 0       |
+|    xor_ln127_43_fu_2035_p2           |     |        | xor_ln127_43       | xor       | auto                     | 0       |
+|    and_ln127_21_fu_2041_p2           |     |        | and_ln127_21       | and       | auto                     | 0       |
+|    xor_ln127_44_fu_2047_p2           |     |        | xor_ln127_44       | xor       | auto                     | 0       |
+|    xor_ln137_fu_2053_p2              |     |        | xor_ln137          | xor       | auto                     | 0       |
+|  + keccak_top_Pipeline_SQUEEZE_BLOCK | 0   |        |                    |           |                          |         |
+|    icmp_ln348_fu_386_p2              |     |        | icmp_ln348         | seteq     | auto                     | 0       |
+|    add_ln348_fu_391_p2               |     |        | add_ln348          | add       | fabric                   | 0       |
+|    sparsemux_51_5_64_1_1_U61         |     |        | p_0                | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln353_fu_497_p2              |     |        | icmp_ln353         | setgt     | auto                     | 0       |
+|    bytes_out_fu_503_p3               |     |        | bytes_out          | select    | auto_sel                 | 0       |
+|    output_remaining_2_fu_511_p2      |     |        | output_remaining_2 | sub       | fabric                   | 0       |
+|    output_stream_TLAST               |     |        | icmp_ln356         | setlt     | auto                     | 0       |
+|    shl_ln357_fu_517_p2               |     |        | shl_ln357          | shl       | auto_pipe                | 0       |
+|    add_ln357_fu_543_p2               |     |        | add_ln357          | add       | fabric                   | 0       |
+|    select_ln357_fu_548_p3            |     |        | select_ln357       | select    | auto_sel                 | 0       |
++--------------------------------------+-----+--------+--------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + keccak_top      |           |           | 2    | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
+|  + keccak_f1600   |           |           | 2    | 0    |        |          |      |         |                  |
+|    RC_TABLE_U     | rom_1p    |           | 2    |      |        | RC_TABLE | auto | 1       | 64, 24, 1        |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Inferred Pragmas
++--------------+---------+--------------------------------------------------------------------+-------------------------+
+| Type         | Options | Location                                                           | Inferred From           |
++--------------+---------+--------------------------------------------------------------------+-------------------------+
+| LOOP_FLATTEN | off     | loop ABSORB_LOOP (keccak.cpp:292:5) in keccak_top (keccak.cpp:292) | pipeline keccak.cpp:301 |
++--------------+---------+--------------------------------------------------------------------+-------------------------+
+
+* Valid Pragma Syntax
++-----------------+-----------------------------------------------+------------------------------------+
+| Type            | Options                                       | Location                           |
++-----------------+-----------------------------------------------+------------------------------------+
+| INLINE          |                                               | in rotl64 (keccak.cpp:21)          |
+| INLINE          |                                               | in idx (keccak.cpp:29)             |
+| INLINE          |                                               | in theta (keccak.cpp:41)           |
+| UNROLL          |                                               | in theta (keccak.cpp:48)           |
+| UNROLL          |                                               | in theta (keccak.cpp:56)           |
+| UNROLL          |                                               | in theta (keccak.cpp:63)           |
+| UNROLL          |                                               | in theta (keccak.cpp:66)           |
+| INLINE          |                                               | in rho_pi (keccak.cpp:77)          |
+| ARRAY_PARTITION | variable=temp_state complete                  | in rho_pi (keccak.cpp:79)          |
+| UNROLL          |                                               | in rho_pi (keccak.cpp:87)          |
+| UNROLL          |                                               | in rho_pi (keccak.cpp:90)          |
+| UNROLL          |                                               | in rho_pi (keccak.cpp:100)         |
+| INLINE          |                                               | in chi (keccak.cpp:109)            |
+| UNROLL          |                                               | in chi (keccak.cpp:112)            |
+| ARRAY_PARTITION | variable=row complete                         | in chi (keccak.cpp:114)            |
+| UNROLL          |                                               | in chi (keccak.cpp:119)            |
+| UNROLL          |                                               | in chi (keccak.cpp:126)            |
+| INLINE          |                                               | in iota (keccak.cpp:136)           |
+| INLINE          | off                                           | in keccak_f1600 (keccak.cpp:145)   |
+| ARRAY_PARTITION | variable=state complete                       | in keccak_f1600 (keccak.cpp:146)   |
+| PIPELINE        | ii=1                                          | in keccak_f1600 (keccak.cpp:150)   |
+| INLINE          | off                                           | in absorb_block (keccak.cpp:169)   |
+| PIPELINE        | ii=1                                          | in absorb_block (keccak.cpp:173)   |
+| INLINE          |                                               | in apply_padding (keccak.cpp:202)  |
+| INLINE          | off                                           | in squeeze_output (keccak.cpp:227) |
+| PIPELINE        | ii=1                                          | in squeeze_output (keccak.cpp:231) |
+| INTERFACE       | mode=axis port=input_stream                   | in keccak_top (keccak.cpp:262)     |
+| INTERFACE       | mode=axis port=output_stream                  | in keccak_top (keccak.cpp:263)     |
+| INTERFACE       | mode=s_axilite port=rate_bytes bundle=control | in keccak_top (keccak.cpp:264)     |
+| INTERFACE       | mode=s_axilite port=delimiter bundle=control  | in keccak_top (keccak.cpp:265)     |
+| INTERFACE       | mode=s_axilite port=output_len bundle=control | in keccak_top (keccak.cpp:266)     |
+| INTERFACE       | mode=s_axilite port=input_len bundle=control  | in keccak_top (keccak.cpp:267)     |
+| INTERFACE       | mode=s_axilite port=return bundle=control     | in keccak_top (keccak.cpp:268)     |
+| ARRAY_PARTITION | variable=state complete                       | in keccak_top (keccak.cpp:272)     |
+| UNROLL          |                                               | in keccak_top (keccak.cpp:276)     |
+| LOOP_TRIPCOUNT  | min=1 max=1000                                | in keccak_top (keccak.cpp:293)     |
+| PIPELINE        | ii=1                                          | in keccak_top (keccak.cpp:301)     |
+| LOOP_TRIPCOUNT  | min=1 max=8                                   | in keccak_top (keccak.cpp:341)     |
+| PIPELINE        | ii=1                                          | in keccak_top (keccak.cpp:349)     |
++-----------------+-----------------------------------------------+------------------------------------+
+
+

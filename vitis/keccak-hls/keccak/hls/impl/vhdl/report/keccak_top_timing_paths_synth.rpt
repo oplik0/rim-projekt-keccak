@@ -1,0 +1,679 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Mon Dec 22 23:28:55 2025
+| Host              : DESKTOP-DI4989O running 64-bit major release  (build 9200)
+| Command           : report_timing -max_paths 10 -file ./report/keccak_top_timing_paths_synth.rpt
+| Design            : bd_0_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Design State      : Synthesized
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.768ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.228ns  (logic 1.195ns (53.636%)  route 1.033ns (46.364%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[7])
+                                                      0.171     2.237 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[7]
+                         net (fo=1, unplaced)         0.034     2.271    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_7
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.044     5.039    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[31]
+  -------------------------------------------------------------------
+                         required time                          5.039    
+                         arrival time                          -2.271    
+  -------------------------------------------------------------------
+                         slack                                  2.768    
+
+Slack (MET) :             2.778ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.217ns  (logic 1.185ns (53.451%)  route 1.032ns (46.549%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[5])
+                                                      0.161     2.227 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[5]
+                         net (fo=1, unplaced)         0.033     2.260    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_9
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[29]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.260    
+  -------------------------------------------------------------------
+                         slack                                  2.778    
+
+Slack (MET) :             2.781ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.214ns  (logic 1.181ns (53.342%)  route 1.033ns (46.658%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[6])
+                                                      0.157     2.223 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[6]
+                         net (fo=1, unplaced)         0.034     2.257    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_8
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[30]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.257    
+  -------------------------------------------------------------------
+                         slack                                  2.781    
+
+Slack (MET) :             2.822ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.174ns  (logic 1.143ns (52.576%)  route 1.031ns (47.424%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[4])
+                                                      0.119     2.185 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[4]
+                         net (fo=1, unplaced)         0.032     2.217    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_10
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.044     5.039    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[28]
+  -------------------------------------------------------------------
+                         required time                          5.039    
+                         arrival time                          -2.217    
+  -------------------------------------------------------------------
+                         slack                                  2.822    
+
+Slack (MET) :             2.824ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.171ns  (logic 1.138ns (52.418%)  route 1.033ns (47.582%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[3])
+                                                      0.114     2.180 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[3]
+                         net (fo=1, unplaced)         0.034     2.214    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_11
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[27]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.214    
+  -------------------------------------------------------------------
+                         slack                                  2.824    
+
+Slack (MET) :             2.833ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.162ns  (logic 1.130ns (52.266%)  route 1.032ns (47.734%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[1])
+                                                      0.106     2.172 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[1]
+                         net (fo=1, unplaced)         0.033     2.205    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_13
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[25]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[25]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.205    
+  -------------------------------------------------------------------
+                         slack                                  2.833    
+
+Slack (MET) :             2.845ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.150ns  (logic 1.117ns (51.953%)  route 1.033ns (48.046%))
+  Logic Levels:           8  (CARRY8=6 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     2.060 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     2.066    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[2])
+                                                      0.093     2.159 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[31]_i_2/O[2]
+                         net (fo=1, unplaced)         0.034     2.193    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_12
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[26]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[26]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.193    
+  -------------------------------------------------------------------
+                         slack                                  2.845    
+
+Slack (MET) :             2.847ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.149ns  (logic 1.122ns (52.210%)  route 1.027ns (47.790%))
+  Logic Levels:           7  (CARRY8=5 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[7])
+                                                      0.171     2.158 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/O[7]
+                         net (fo=1, unplaced)         0.034     2.192    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_15
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[23]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.044     5.039    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[23]
+  -------------------------------------------------------------------
+                         required time                          5.039    
+                         arrival time                          -2.192    
+  -------------------------------------------------------------------
+                         slack                                  2.847    
+
+Slack (MET) :             2.857ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.138ns  (logic 1.112ns (52.011%)  route 1.026ns (47.989%))
+  Logic Levels:           7  (CARRY8=5 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[5])
+                                                      0.161     2.148 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/O[5]
+                         net (fo=1, unplaced)         0.033     2.181    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_17
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[21]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[21]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.181    
+  -------------------------------------------------------------------
+                         slack                                  2.857    
+
+Slack (MET) :             2.860ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.135ns  (logic 1.108ns (51.897%)  route 1.027ns (48.103%))
+  Logic Levels:           7  (CARRY8=5 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.030ns = ( 5.030 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.043ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.043     0.043    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.113     0.156 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[4]/Q
+                         net (fo=10, unplaced)        0.187     0.343    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103_output_remaining_1_out[4]
+                         LUT2 (Prop_LUT2_I1_O)        0.095     0.438 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23/O
+                         net (fo=1, unplaced)         0.276     0.714    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714[0]_i_23_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.204     0.918 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2/CO[7]
+                         net (fo=1, unplaced)         0.006     0.924    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_2_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[6])
+                                                      0.128     1.052 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/icmp_ln315_reg_714_reg[0]_i_1/CO[6]
+                         net (fo=97, unplaced)        0.236     1.288    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/p_0_in
+                         LUT4 (Prop_LUT4_I1_O)        0.095     1.383 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10/O
+                         net (fo=1, unplaced)         0.276     1.659    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176[7]_i_10_n_0
+                         CARRY8 (Prop_CARRY8_DI[0]_CO[7])
+                                                      0.243     1.902 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.908    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[7]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_CO[7])
+                                                      0.073     1.981 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1/CO[7]
+                         net (fo=1, unplaced)         0.006     1.987    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[15]_i_1_n_0
+                         CARRY8 (Prop_CARRY8_CI_O[6])
+                                                      0.157     2.144 r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U/output_remaining_1_fu_176_reg[23]_i_1/O[6]
+                         net (fo=1, unplaced)         0.034     2.178    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U_n_16
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=12226, unset)        0.030     5.030    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[22]/C
+                         clock pessimism              0.000     5.030    
+                         clock uncertainty           -0.035     4.995    
+                         FDRE (Setup_FDRE_C_D)        0.043     5.038    bd_0_i/hls_inst/U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/output_remaining_1_fu_176_reg[22]
+  -------------------------------------------------------------------
+                         required time                          5.038    
+                         arrival time                          -2.178    
+  -------------------------------------------------------------------
+                         slack                                  2.860    
+
+
+
+

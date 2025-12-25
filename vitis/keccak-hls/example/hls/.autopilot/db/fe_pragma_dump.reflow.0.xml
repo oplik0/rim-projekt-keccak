@@ -1,0 +1,118 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::RType<6, false>::minus operator-<32, true, 6, false>(ap_int_base<32, true> const&, ap_int_base<6, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="empty" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator==<1, false>(ap_int_base<1, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_data_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDU1_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint<8>(ap_uint<8> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<8, false>::mod operator%<32, false, 8, false>(ap_int_base<32, false> const&, ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<6, false>(ap_int_base<6, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<9, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="522" pragmaType="inline" parentfunction="ssdm_int<32, true>::ssdm_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_keep_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_last_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator><8, false>(int, ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<64, false>::arg1 operator<<<64, false>(ap_int_base<64, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="202" pragmaType="inline" parentfunction="apply_padding" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, true>::operator==<8, false>(ap_int_base<8, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="to_uint" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<1, false>::operator==<32, true>(ap_int_base<32, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="522" pragmaType="inline" parentfunction="_ZN8ssdm_intILi34ELb1EEC2EDB34_" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="341" pragmaType="loop_tripcount" parentfunction="keccak_top" min="1" max="8" avg="4"/>
+<pragma file="keccak.cpp" line="349" pragmaType="pipeline" parentfunction="keccak_top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="keccak.cpp" line="293" pragmaType="loop_tripcount" parentfunction="keccak_top" min="1" max="1000" avg="500"/>
+<pragma file="keccak.cpp" line="301" pragmaType="pipeline" parentfunction="keccak_top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="keccak.cpp" line="276" pragmaType="unroll" parentfunction="keccak_top" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="262" pragmaType="interface" parentfunction="keccak_top" mode="axis" port="input_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="keccak.cpp" line="263" pragmaType="interface" parentfunction="keccak_top" mode="axis" port="output_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="keccak.cpp" line="264" pragmaType="interface" parentfunction="keccak_top" mode="s_axilite" port="rate_bytes" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="keccak.cpp" line="265" pragmaType="interface" parentfunction="keccak_top" mode="s_axilite" port="delimiter" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="keccak.cpp" line="266" pragmaType="interface" parentfunction="keccak_top" mode="s_axilite" port="output_len" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="keccak.cpp" line="267" pragmaType="interface" parentfunction="keccak_top" mode="s_axilite" port="input_len" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="keccak.cpp" line="268" pragmaType="interface" parentfunction="keccak_top" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="keccak.cpp" line="272" pragmaType="array_partition" parentfunction="keccak_top" dim="1" factor="0" mode="complete" dynamic="0" variable="state"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_strb_ptr" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="522" pragmaType="inline" parentfunction="_ZN8ssdm_intILi33ELb1EEC2EDB33_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<34>::ap_int<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="_ZN8ssdm_intILi33ELb0EEC2EDU33_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::RType<($_0)32, true>::div operator/<8, false>(ap_int_base<8, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator==<8, false>(int, ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<9, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="522" pragmaType="inline" parentfunction="_ZN8ssdm_intILi9ELb1EEC2EDB9_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, true>::operator><8, false>(ap_int_base<8, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<9>::ap_int<9, true>(ap_int_base<9, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::RType<32, true>::div operator/<8, false, 32, true>(ap_int_base<8, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_user_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>& ap_int_base<64, false>::operator^=<64, false>(ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, false>& ap_int_base<33, false>::operator=<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_dest_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, false>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="109" pragmaType="inline" parentfunction="chi" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="112" pragmaType="unroll" parentfunction="chi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="119" pragmaType="unroll" parentfunction="chi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="126" pragmaType="unroll" parentfunction="chi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="114" pragmaType="array_partition" parentfunction="chi" dim="1" factor="0" mode="complete" dynamic="0" variable="row"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint<64, false>(ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64> ap_int_base<64, false>::operator<<<6>(ap_int_base<6, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64> ap_int_base<64, false>::operator<<<33>(ap_int_base<33, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64> ap_int_base<64, false>::operator>><33>(ap_int_base<33, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64> ap_int_base<64, false>::operator>><33>(ap_int_base<33, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="29" pragmaType="inline" parentfunction="idx" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<64, false>::logic operator&<64, false, 64, false>(ap_int_base<64, false> const&, ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="136" pragmaType="inline" parentfunction="iota" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="21" pragmaType="inline" parentfunction="rotl64" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<6>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<6, false>::RType<($_0)32, true>::minus operator-<6, false>(int, ap_int_base<6, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<64, false>::logic operator|<64, false, 64, false>(ap_int_base<64, false> const&, ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::operator-() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="_ZN8ssdm_intILi6ELb0EEC2EDU6_" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="to_uint" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<6, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h" line="530" pragmaType="inline" parentfunction="ssdm_int<64, false>::ssdm_int(unsigned long)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="77" pragmaType="inline" parentfunction="rho_pi" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="100" pragmaType="unroll" parentfunction="rho_pi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="87" pragmaType="unroll" parentfunction="rho_pi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="90" pragmaType="unroll" parentfunction="rho_pi" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="79" pragmaType="array_partition" parentfunction="rho_pi" dim="1" factor="0" mode="complete" dynamic="0" variable="temp_state"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="145" pragmaType="inline" parentfunction="keccak_f1600" off="1" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="150" pragmaType="pipeline" parentfunction="keccak_f1600" off="0" ii="1" rewind="0" style=""/>
+<pragma file="keccak.cpp" line="146" pragmaType="array_partition" parentfunction="keccak_f1600" dim="1" factor="0" mode="complete" dynamic="0" variable="state"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<64, false>::logic operator^<64, false, 64, false>(ap_int_base<64, false> const&, ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::RType<33, true>::minus operator-<1, false, 33, true>(ap_int_base<1, false> const&, ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="41" pragmaType="inline" parentfunction="theta" off="0" region="0" recursive="0"/>
+<pragma file="keccak.cpp" line="63" pragmaType="unroll" parentfunction="theta" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="66" pragmaType="unroll" parentfunction="theta" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="56" pragmaType="unroll" parentfunction="theta" factor="-1" skip_exit_check="0"/>
+<pragma file="keccak.cpp" line="48" pragmaType="unroll" parentfunction="theta" factor="-1" skip_exit_check="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::operator~() const" off="0" region="0" recursive="0"/>
+</pragmas>

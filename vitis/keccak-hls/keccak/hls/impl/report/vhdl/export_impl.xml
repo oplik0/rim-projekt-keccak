@@ -1,0 +1,165 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>impl</RUN_TYPE>
+    <VIVADO_VERSION>v.2025.2</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>5.000</TargetClockPeriod>
+    <AchievedClockPeriod>4.568</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>4.568</CP_FINAL>
+    <CP_ROUTE>4.568</CP_ROUTE>
+    <CP_SYNTH>2.232</CP_SYNTH>
+    <CP_TARGET>5.000</CP_TARGET>
+    <SLACK_FINAL>0.432</SLACK_FINAL>
+    <SLACK_ROUTE>0.432</SLACK_ROUTE>
+    <SLACK_SYNTH>2.768</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>0.000</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>0.432</WNS_FINAL>
+    <WNS_ROUTE>0.432</WNS_ROUTE>
+    <WNS_SYNTH>2.768</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>0</BRAM>
+      <CLB>2640</CLB>
+      <DSP>0</DSP>
+      <FF>12246</FF>
+      <LATCH>0</LATCH>
+      <LUT>12456</LUT>
+      <SRL>0</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>288</BRAM>
+      <CLB>14640</CLB>
+      <DSP>1248</DSP>
+      <FF>234240</FF>
+      <LUT>117120</LUT>
+      <URAM>64</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="U0" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="keccak_top" DISPNAME="U0" RTLNAME="keccak_top">
+      <SubModules count="13">control_s_axi_U grp_keccak_f1600_fu_4047 grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103 regslice_both_input_stream_V_data_V_U regslice_both_input_stream_V_keep_V_U regslice_both_input_stream_V_last_V_U regslice_both_output_stream_V_data_V_U regslice_both_output_stream_V_keep_V_U regslice_both_output_stream_V_last_V_U regslice_both_output_stream_V_strb_V_U sparsemux_51_5_64_1_1_U61 sparsemux_51_5_64_1_1_U62 sparsemux_51_5_64_1_1_U63</SubModules>
+      <Resources LogicLUT="12456"/>
+      <LocalResources LogicLUT="150"/>
+    </RtlModule>
+    <RtlModule CELL="U0/control_s_axi_U" DEPTH="1" TYPE="resource" MODULENAME="control_s_axi" DISPNAME="control_s_axi_U" RTLNAME="keccak_top_control_s_axi">
+      <Resources LogicLUT="79"/>
+    </RtlModule>
+    <RtlModule CELL="U0/grp_keccak_f1600_fu_4047" DEPTH="1" TYPE="function" MODULENAME="keccak_f1600" DISPNAME="grp_keccak_f1600_fu_4047" RTLNAME="keccak_top_keccak_f1600">
+      <SubModules count="2">RC_TABLE_U flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="7193"/>
+      <LocalResources LogicLUT="4345"/>
+    </RtlModule>
+    <RtlModule CELL="U0/grp_keccak_f1600_fu_4047/RC_TABLE_U" DEPTH="2" TYPE="resource" MODULENAME="keccak_f1600_RC_TABLE_ROM_AUTO_1R" DISPNAME="RC_TABLE_U" RTLNAME="keccak_top_keccak_f1600_RC_TABLE_ROM_AUTO_1R"/>
+    <RtlModule CELL="U0/grp_keccak_f1600_fu_4047/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="keccak_top_flow_control_loop_pipe_sequential_init">
+      <Resources LogicLUT="2841"/>
+    </RtlModule>
+    <RtlModule CELL="U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103" DEPTH="1" TYPE="function" MODULENAME="keccak_top_Pipeline_SQUEEZE_BLOCK" DISPNAME="grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103" RTLNAME="keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="746"/>
+      <LocalResources LogicLUT="689"/>
+    </RtlModule>
+    <RtlModule CELL="U0/grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_4103/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="keccak_top_flow_control_loop_pipe_sequential_init">
+      <Resources LogicLUT="57"/>
+    </RtlModule>
+    <RtlModule CELL="U0/regslice_both_input_stream_V_data_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_input_stream_V_data_V_U" RTLNAME="keccak_top_regslice_both">
+      <Resources LogicLUT="70"/>
+    </RtlModule>
+    <RtlModule CELL="U0/regslice_both_input_stream_V_keep_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_input_stream_V_keep_V_U" RTLNAME="keccak_top_regslice_both"/>
+    <RtlModule CELL="U0/regslice_both_input_stream_V_last_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_input_stream_V_last_V_U" RTLNAME="keccak_top_regslice_both"/>
+    <RtlModule CELL="U0/regslice_both_output_stream_V_data_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_output_stream_V_data_V_U" RTLNAME="keccak_top_regslice_both">
+      <Resources LogicLUT="74"/>
+    </RtlModule>
+    <RtlModule CELL="U0/regslice_both_output_stream_V_keep_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_output_stream_V_keep_V_U" RTLNAME="keccak_top_regslice_both"/>
+    <RtlModule CELL="U0/regslice_both_output_stream_V_last_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_output_stream_V_last_V_U" RTLNAME="keccak_top_regslice_both"/>
+    <RtlModule CELL="U0/regslice_both_output_stream_V_strb_V_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_output_stream_V_strb_V_U" RTLNAME="keccak_top_regslice_both"/>
+    <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U61" DEPTH="1" TYPE="resource" MODULENAME="sparsemux_51_5_64_1_1" DISPNAME="sparsemux_51_5_64_1_1_U61" RTLNAME="keccak_top_sparsemux_51_5_64_1_1">
+      <Resources LogicLUT="513"/>
+    </RtlModule>
+    <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U62" DEPTH="1" TYPE="resource" MODULENAME="sparsemux_51_5_64_1_1" DISPNAME="sparsemux_51_5_64_1_1_U62" RTLNAME="keccak_top_sparsemux_51_5_64_1_1">
+      <Resources LogicLUT="1508"/>
+    </RtlModule>
+    <RtlModule CELL="U0/sparsemux_51_5_64_1_1_U63" DEPTH="1" TYPE="resource" MODULENAME="sparsemux_51_5_64_1_1" DISPNAME="sparsemux_51_5_64_1_1_U63" RTLNAME="keccak_top_sparsemux_51_5_64_1_1">
+      <Resources LogicLUT="2080"/>
+    </RtlModule>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="4.564" DATAPATH_LOGIC_DELAY="0.337" DATAPATH_NET_DELAY="4.227" ENDPOINT_PIN="state_14_4_reg_2802_reg[32]/D" LOGIC_LEVELS="1" MAX_FANOUT="118" SLACK="0.432" STARTPOINT_PIN="last_lane_idx_reg_7447_reg[4]_rep__3/C">
+      <CELL NAME="last_lane_idx_reg_7447_reg[4]_rep__3" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1339"/>
+      <CELL NAME="sparsemux_51_5_64_1_1_U63/state_14_4_reg_2802[32]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1352" MODULE_INSTNAME="sparsemux_51_5_64_1_1_U63" IS_FUNCINST="0"/>
+      <CELL NAME="state_14_4_reg_2802_reg[32]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1750"/>
+      <MODULE_INSTANCES>sparsemux_51_5_64_1_1_U63</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="4.557" DATAPATH_LOGIC_DELAY="0.200" DATAPATH_NET_DELAY="4.357" ENDPOINT_PIN="state_17_4_reg_2553_reg[58]/D" LOGIC_LEVELS="1" MAX_FANOUT="118" SLACK="0.439" STARTPOINT_PIN="last_lane_idx_reg_7447_reg[4]_rep__5/C">
+      <CELL NAME="last_lane_idx_reg_7447_reg[4]_rep__5" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1339"/>
+      <CELL NAME="sparsemux_51_5_64_1_1_U63/state_17_4_reg_2553[58]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1352" MODULE_INSTNAME="sparsemux_51_5_64_1_1_U63" IS_FUNCINST="0"/>
+      <CELL NAME="state_17_4_reg_2553_reg[58]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1870"/>
+      <MODULE_INSTANCES>sparsemux_51_5_64_1_1_U63</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="4.546" DATAPATH_LOGIC_DELAY="0.333" DATAPATH_NET_DELAY="4.213" ENDPOINT_PIN="state_21_4_reg_2221_reg[60]/D" LOGIC_LEVELS="1" MAX_FANOUT="118" SLACK="0.450" STARTPOINT_PIN="last_lane_idx_reg_7447_reg[4]_rep__1/C">
+      <CELL NAME="last_lane_idx_reg_7447_reg[4]_rep__1" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1339"/>
+      <CELL NAME="sparsemux_51_5_64_1_1_U63/state_21_4_reg_2221[60]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1352" MODULE_INSTNAME="sparsemux_51_5_64_1_1_U63" IS_FUNCINST="0"/>
+      <CELL NAME="state_21_4_reg_2221_reg[60]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="2070"/>
+      <MODULE_INSTANCES>sparsemux_51_5_64_1_1_U63</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="4.526" DATAPATH_LOGIC_DELAY="0.251" DATAPATH_NET_DELAY="4.275" ENDPOINT_PIN="state_5_4_reg_3549_reg[29]/D" LOGIC_LEVELS="1" MAX_FANOUT="118" SLACK="0.470" STARTPOINT_PIN="last_lane_idx_reg_7447_reg[4]_rep__9/C">
+      <CELL NAME="last_lane_idx_reg_7447_reg[4]_rep__9" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1339"/>
+      <CELL NAME="sparsemux_51_5_64_1_1_U63/state_5_4_reg_3549[29]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1352" MODULE_INSTNAME="sparsemux_51_5_64_1_1_U63" IS_FUNCINST="0"/>
+      <CELL NAME="state_5_4_reg_3549_reg[29]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="2377"/>
+      <MODULE_INSTANCES>sparsemux_51_5_64_1_1_U63</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="4.523" DATAPATH_LOGIC_DELAY="0.333" DATAPATH_NET_DELAY="4.190" ENDPOINT_PIN="state_23_4_reg_2055_reg[11]/D" LOGIC_LEVELS="1" MAX_FANOUT="118" SLACK="0.473" STARTPOINT_PIN="last_lane_idx_reg_7447_reg[4]_rep__1/C">
+      <CELL NAME="last_lane_idx_reg_7447_reg[4]_rep__1" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1339"/>
+      <CELL NAME="sparsemux_51_5_64_1_1_U63/state_23_4_reg_2055[11]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="keccak_top.vhd" LINE_NUMBER="1352" MODULE_INSTNAME="sparsemux_51_5_64_1_1_U63" IS_FUNCINST="0"/>
+      <CELL NAME="state_23_4_reg_2055_reg[11]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="keccak_top.vhd" LINE_NUMBER="2150"/>
+      <MODULE_INSTANCES>sparsemux_51_5_64_1_1_U63</MODULE_INSTANCES>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="vhdl/report/keccak_top_design_analysis_routed.rpt"/>
+    <ReportFile TYPE="failfast" PATH="vhdl/report/keccak_top_failfast_routed.rpt"/>
+    <ReportFile TYPE="power" PATH="vhdl/report/keccak_top_power_routed.rpt"/>
+    <ReportFile TYPE="status" PATH="vhdl/report/keccak_top_status_routed.rpt"/>
+    <ReportFile TYPE="timing" PATH="vhdl/report/keccak_top_timing_routed.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="vhdl/report/keccak_top_timing_paths_routed.rpt"/>
+    <ReportFile TYPE="utilization" PATH="vhdl/report/keccak_top_utilization_routed.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="vhdl/report/keccak_top_utilization_hierarchical_routed.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Mon Dec 22 23:34:21 +0100 2025"/>
+    <item NAME="Version" VALUE="2025.2 (Build 6295257 on Nov 14 2025)"/>
+    <item NAME="Project" VALUE="keccak"/>
+    <item NAME="Solution" VALUE="hls (Vivado IP Flow Target)"/>
+    <item NAME="Product family" VALUE="zynquplus"/>
+    <item NAME="Target device" VALUE="xck26-sfvc784-2LV-c"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="Place &amp; Route target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="27%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Impl NAME="Place &amp; Route Options">
+      <item NAME="config_export -vivado_impl_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_phys_opt" VALUE="auto"/>
+      <item NAME="config_export -vivado_pblock" VALUE=""/>
+    </Impl>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>

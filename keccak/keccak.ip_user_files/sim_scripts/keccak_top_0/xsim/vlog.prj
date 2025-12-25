@@ -1,0 +1,16 @@
+verilog xil_defaultlib -i "../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef" --include "C:/AMDDesignTools/2025.2/Vivado/data/xilinx_vip/include" --include "../../../ipstatic/hdl/verilog" --include "../../../../keccak.gen/sources_1/ip/keccak_top_0/drivers/keccak_top_v1_0/src" \
+"../../../ipstatic/hdl/verilog/keccak_top_control_s_axi.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_flow_control_loop_pipe_sequential_init.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_hls_deadlock_idx0_monitor.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_keccak_f1600.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_keccak_f1600_RC_TABLE_ROM_AUTO_1R.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_keccak_top_Pipeline_SQUEEZE_BLOCK.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_regslice_both.v" \
+"../../../ipstatic/hdl/verilog/keccak_top_sparsemux_51_5_64_1_1.v" \
+"../../../ipstatic/hdl/verilog/keccak_top.v" \
+"../../../../keccak.gen/sources_1/ip/keccak_top_0/sim/keccak_top_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

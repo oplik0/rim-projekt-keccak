@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'keccak_top'" level="0">
+<item name = "Date">Mon Dec 22 22:18:15 2025
+</item>
+<item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
+<item name = "Project">example</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00 ns, 3.430 ns, 1.35 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">78, 64578, 0.390 us, 0.323 ms, 79, 64579, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_keccak_top_Pipeline_ABSORB_BLOCK_fu_3850">keccak_top_Pipeline_ABSORB_BLOCK, 2, 34, 10.000 ns, 0.170 us, 0, 0, loop pipeline stp</column>
+<column name="grp_keccak_f1600_fu_3891">keccak_f1600, 26, 26, 0.130 us, 0.130 us, 0, 0, loop pipeline stp</column>
+<column name="grp_keccak_top_Pipeline_SQUEEZE_BLOCK_fu_3947">keccak_top_Pipeline_SQUEEZE_BLOCK, 2, 34, 10.000 ns, 0.170 us, 0, 0, loop pipeline stp</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- ABSORB_LOOP">6, 64000, 6 ~ 64, -, -, 1 ~ 1000, no</column>
+<column name="- SQUEEZE_LOOP">6, 512, 6 ~ 64, -, -, 1 ~ 8, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

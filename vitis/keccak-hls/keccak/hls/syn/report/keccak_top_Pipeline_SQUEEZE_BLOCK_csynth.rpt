@@ -1,0 +1,192 @@
+
+
+================================================================
+== Vitis HLS Report for 'keccak_top_Pipeline_SQUEEZE_BLOCK'
+================================================================
+* Date:           Mon Dec 22 23:16:15 2025
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        keccak
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.877 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+-------------------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval |      Pipeline     |
+    |   min   |   max   |    min    |    max   | min | max |        Type       |
+    +---------+---------+-----------+----------+-----+-----+-------------------+
+    |        2|       34|  10.000 ns|  0.170 us|    0|    0|  loop pipeline stp|
+    +---------+---------+-----------+----------+-----+-----+-------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- SQUEEZE_BLOCK  |        0|       32|         2|          1|          1|  0 ~ 32|       yes|
+        +-----------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|     295|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       0|     125|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|      54|    -|
+|Register         |        -|     -|     147|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|     147|     474|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+-----------------------+---------+----+---+-----+-----+
+    |          Instance         |         Module        | BRAM_18K| DSP| FF| LUT | URAM|
+    +---------------------------+-----------------------+---------+----+---+-----+-----+
+    |sparsemux_51_5_64_1_1_U27  |sparsemux_51_5_64_1_1  |        0|   0|  0|  125|    0|
+    +---------------------------+-----------------------+---------+----+---+-----+-----+
+    |Total                      |                       |        0|   0|  0|  125|    0|
+    +---------------------------+-----------------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------------+----------+----+---+----+------------+------------+
+    |         Variable Name        | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------+----------+----+---+----+------------+------------+
+    |add_ln310_fu_391_p2           |         +|   0|  0|  13|           6|           1|
+    |add_ln319_fu_543_p2           |         +|   0|  0|  15|           8|           2|
+    |output_remaining_2_fu_511_p2  |         -|   0|  0|  39|          32|          32|
+    |ap_block_pp0_stage0_01001     |       and|   0|  0|   2|           1|           1|
+    |icmp_ln310_fu_386_p2          |      icmp|   0|  0|  13|           6|           6|
+    |icmp_ln315_fu_497_p2          |      icmp|   0|  0|  36|          29|           1|
+    |output_stream_TLAST           |      icmp|   0|  0|  39|          32|           1|
+    |bytes_out_fu_503_p3           |    select|   0|  0|  32|           1|           4|
+    |select_ln319_fu_548_p3        |    select|   0|  0|   8|           1|           2|
+    |shl_ln319_fu_517_p2           |       shl|   0|  0|  96|           1|          32|
+    |ap_enable_pp0                 |       xor|   0|  0|   2|           1|           2|
+    +------------------------------+----------+----+---+----+------------+------------+
+    |Total                         |          |   0|  0| 295|         118|          84|
+    +------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |ap_done_int                |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1    |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2    |   9|          2|    1|          2|
+    |i_fu_180                   |   9|          2|    6|         12|
+    |output_remaining_1_fu_176  |   9|          2|   32|         64|
+    |output_stream_TDATA_blk_n  |   9|          2|    1|          2|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      |  54|         12|   42|         84|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+----+----+-----+-----------+
+    |            Name            | FF | LUT| Bits| Const Bits|
+    +----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                   |   1|   0|    1|          0|
+    |ap_done_reg                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1     |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2     |   1|   0|    1|          0|
+    |i_fu_180                    |   6|   0|    6|          0|
+    |icmp_ln315_reg_714          |   1|   0|    1|          0|
+    |output_remaining_1_fu_176   |  32|   0|   32|          0|
+    |output_remaining_2_reg_719  |  32|   0|   32|          0|
+    |p_0_reg_709                 |  64|   0|   64|          0|
+    |trunc_ln319_reg_724         |   8|   0|    8|          0|
+    +----------------------------+----+----+-----+-----------+
+    |Total                       | 147|   0|  147|          0|
+    +----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++-------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk                         |   in|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|ap_rst                         |   in|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|ap_start                       |   in|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|ap_done                        |  out|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|ap_idle                        |  out|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|ap_ready                       |  out|    1|  ap_ctrl_hs|  keccak_top_Pipeline_SQUEEZE_BLOCK|  return value|
+|output_stream_TREADY           |   in|    1|        axis|             output_stream_V_data_V|       pointer|
+|output_stream_TDATA            |  out|   64|        axis|             output_stream_V_data_V|       pointer|
+|output_remaining               |   in|   31|     ap_none|                   output_remaining|        scalar|
+|trunc_ln4                      |   in|    6|     ap_none|                          trunc_ln4|        scalar|
+|state_5217                     |   in|   64|     ap_none|                         state_5217|        scalar|
+|state_1_5                      |   in|   64|     ap_none|                          state_1_5|        scalar|
+|state_2_5                      |   in|   64|     ap_none|                          state_2_5|        scalar|
+|state_3_5                      |   in|   64|     ap_none|                          state_3_5|        scalar|
+|state_4_5                      |   in|   64|     ap_none|                          state_4_5|        scalar|
+|state_5_5                      |   in|   64|     ap_none|                          state_5_5|        scalar|
+|state_6_5                      |   in|   64|     ap_none|                          state_6_5|        scalar|
+|state_7_5                      |   in|   64|     ap_none|                          state_7_5|        scalar|
+|state_8_5                      |   in|   64|     ap_none|                          state_8_5|        scalar|
+|state_9_5                      |   in|   64|     ap_none|                          state_9_5|        scalar|
+|state_10_5                     |   in|   64|     ap_none|                         state_10_5|        scalar|
+|state_11_5                     |   in|   64|     ap_none|                         state_11_5|        scalar|
+|state_12_5                     |   in|   64|     ap_none|                         state_12_5|        scalar|
+|state_13_5                     |   in|   64|     ap_none|                         state_13_5|        scalar|
+|state_14_5                     |   in|   64|     ap_none|                         state_14_5|        scalar|
+|state_15_5                     |   in|   64|     ap_none|                         state_15_5|        scalar|
+|state_16_5                     |   in|   64|     ap_none|                         state_16_5|        scalar|
+|state_17_5                     |   in|   64|     ap_none|                         state_17_5|        scalar|
+|state_18_5                     |   in|   64|     ap_none|                         state_18_5|        scalar|
+|state_19_5                     |   in|   64|     ap_none|                         state_19_5|        scalar|
+|state_20_5                     |   in|   64|     ap_none|                         state_20_5|        scalar|
+|state_21_5                     |   in|   64|     ap_none|                         state_21_5|        scalar|
+|state_22_5                     |   in|   64|     ap_none|                         state_22_5|        scalar|
+|state_23_5                     |   in|   64|     ap_none|                         state_23_5|        scalar|
+|state_24_5                     |   in|   64|     ap_none|                         state_24_5|        scalar|
+|output_stream_TVALID           |  out|    1|        axis|             output_stream_V_last_V|       pointer|
+|output_stream_TLAST            |  out|    1|        axis|             output_stream_V_last_V|       pointer|
+|output_stream_TKEEP            |  out|    8|        axis|             output_stream_V_keep_V|       pointer|
+|output_stream_TSTRB            |  out|    8|        axis|             output_stream_V_strb_V|       pointer|
+|output_remaining_1_out         |  out|   32|      ap_vld|             output_remaining_1_out|       pointer|
+|output_remaining_1_out_ap_vld  |  out|    1|      ap_vld|             output_remaining_1_out|       pointer|
++-------------------------------+-----+-----+------------+-----------------------------------+--------------+
+
