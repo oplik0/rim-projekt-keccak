@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1766448236" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/keccak_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1766622336" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/keccak_top.dcp">
+  <File Type="PA-TCL" Name="keccak_top.tcl"/>
   <File Type="REPORTS-TCL" Name="keccak_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="keccak_top.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="keccak_top_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="keccak_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="keccak_top_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="keccak_top.tcl"/>
-  <File Type="RDS-RDS" Name="keccak_top.vds"/>
   <File Type="RDS-DCP" Name="keccak_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="keccak_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="keccak_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../packaged_ip/component.xml">

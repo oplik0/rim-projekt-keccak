@@ -2,8 +2,8 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "keccak_core_0",
-    "component_reference": "jakub.blizni.uk:user:keccak_core:1.0",
-    "ip_revision": "7",
+    "component_reference": "jakub.blizni.uk:user:keccak_core:1.1",
+    "ip_revision": "11",
     "gen_directory": "../../../../keccak.gen/sources_1/ip/keccak_core_0",
     "parameters": {
       "component_parameters": {
@@ -30,7 +30,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
-        "IPREVISION": [ { "value": "7" } ],
+        "IPREVISION": [ { "value": "11" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../keccak.gen/sources_1/ip/keccak_core_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -247,5 +247,5 @@
       }
     }
   },
-  "checksum": "e1e0acc6"
+  "checksum": "a3b52aac"
 }

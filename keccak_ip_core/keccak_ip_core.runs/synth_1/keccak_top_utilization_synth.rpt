@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Dec 23 01:05:52 2025
+| Date         : Thu Dec 25 01:27:28 2025
 | Host         : DESKTOP-DI4989O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file keccak_top_utilization_synth.rpt -pb keccak_top_utilization_synth.pb
 | Design       : keccak_top
@@ -32,17 +32,17 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*               | 8669 |     0 |          0 |    117120 |  7.40 |
-|   LUT as Logic          | 8669 |     0 |          0 |    117120 |  7.40 |
+| CLB LUTs*               | 8685 |     0 |          0 |    117120 |  7.42 |
+|   LUT as Logic          | 8685 |     0 |          0 |    117120 |  7.42 |
 |   LUT as Memory         |    0 |     0 |          0 |     57600 |  0.00 |
-| CLB Registers           | 3460 |     0 |          0 |    234240 |  1.48 |
-|   Register as Flip Flop | 3460 |     0 |          0 |    234240 |  1.48 |
+| CLB Registers           | 5024 |     0 |          0 |    234240 |  2.14 |
+|   Register as Flip Flop | 5024 |     0 |          0 |    234240 |  2.14 |
 |   Register as Latch     |    0 |     0 |          0 |    234240 |  0.00 |
 | CARRY8                  |    0 |     0 |          0 |     14640 |  0.00 |
-| F7 Muxes                |  579 |     0 |          0 |     58560 |  0.99 |
+| F7 Muxes                |  586 |     0 |          0 |     58560 |  1.00 |
 | F8 Muxes                |  256 |     0 |          0 |     29280 |  0.87 |
 | F9 Muxes                |    0 |     0 |          0 |     14640 |  0.00 |
-| Unique Control Sets     |   41 |       |          0 |     29280 |  0.14 |
+| Unique Control Sets     |   42 |       |          0 |     29280 |  0.14 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -65,7 +65,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 3458  |          Yes |       Reset |            - |
+| 5022  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -171,19 +171,19 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 5986 |                 CLB |
-| FDRE     | 3458 |            Register |
-| LUT2     | 1645 |                 CLB |
-| LUT5     | 1560 |                 CLB |
-| MUXF7    |  579 |                 CLB |
+| LUT6     | 5685 |                 CLB |
+| FDRE     | 5022 |            Register |
+| LUT5     | 1873 |                 CLB |
+| LUT2     | 1638 |                 CLB |
+| MUXF7    |  586 |                 CLB |
 | MUXF8    |  256 |                 CLB |
-| LUT3     |  126 |                 CLB |
+| LUT3     |  148 |                 CLB |
 | OBUF     |  125 |                 I/O |
 | INBUF    |  110 |                 I/O |
 | IBUFCTRL |  110 |              Others |
-| LUT4     |   68 |                 CLB |
-| LUT1     |    2 |                 CLB |
+| LUT4     |   63 |                 CLB |
 | FDSE     |    2 |            Register |
+| LUT1     |    1 |                 CLB |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+
 

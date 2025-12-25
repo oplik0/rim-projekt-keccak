@@ -1,0 +1,263 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Dec 25 01:35:28 2025
+# Process ID         : 36220
+# Current directory  : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1
+# Command line       : vivado.exe -log top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_wrapper.tcl
+# Log file           : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/top_wrapper.vds
+# Journal file       : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-DI4989O
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 9 7900X 12-Core Processor            
+# CPU Frequency      : 4700 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 24
+# Host memory        : 67756 MB
+# Swap memory        : 9663 MB
+# Total Virtual      : 77420 MB
+# Available Virtual  : 34276 MB
+#-----------------------------------------------------------
+source top_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jakub/projects/rim-projekt/vitis/keccak-hls'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jakub/projects/rim-projekt/packaged_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/utils_1/imports/synth_1/top_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/utils_1/imports/synth_1/top_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top_wrapper -part xck26-sfvc784-2LV-c
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 33640
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1888.062 ; gain = 209.828
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_wrapper' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
+INFO: [Synth 8-638] synthesizing module 'top' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:25]
+INFO: [Synth 8-3491] module 'top_axi_fifo_mm_s_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_axi_fifo_mm_s_0_0_stub.vhdl:6' bound to instance 'axi_fifo_mm_s_0' of component 'top_axi_fifo_mm_s_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:473]
+INFO: [Synth 8-638] synthesizing module 'top_axi_fifo_mm_s_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_axi_fifo_mm_s_0_0_stub.vhdl:48]
+INFO: [Synth 8-3491] module 'top_clk_wiz_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'top_clk_wiz_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:506]
+INFO: [Synth 8-638] synthesizing module 'top_clk_wiz_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_clk_wiz_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'top_keccak_core_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_keccak_core_0_0_stub.vhdl:6' bound to instance 'keccak_core_0' of component 'top_keccak_core_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:513]
+INFO: [Synth 8-638] synthesizing module 'top_keccak_core_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_keccak_core_0_0_stub.vhdl:50]
+INFO: [Synth 8-3491] module 'top_proc_sys_reset_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_proc_sys_reset_0_0_stub.vhdl:6' bound to instance 'proc_sys_reset_0' of component 'top_proc_sys_reset_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:549]
+INFO: [Synth 8-638] synthesizing module 'top_proc_sys_reset_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_proc_sys_reset_0_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'top_smartconnect_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_smartconnect_0_0_stub.vhdl:6' bound to instance 'smartconnect_0' of component 'top_smartconnect_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:562]
+INFO: [Synth 8-638] synthesizing module 'top_smartconnect_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_smartconnect_0_0_stub.vhdl:136]
+INFO: [Synth 8-3491] module 'top_zynq_ultra_ps_e_0_0' declared at 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_zynq_ultra_ps_e_0_0_stub.vhdl:6' bound to instance 'zynq_ultra_ps_e_0' of component 'top_zynq_ultra_ps_e_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:683]
+INFO: [Synth 8-638] synthesizing module 'top_zynq_ultra_ps_e_0_0' [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/.Xil/Vivado-36220-DESKTOP-DI4989O/realtime/top_zynq_ultra_ps_e_0_0_stub.vhdl:102]
+INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/synth/top.vhd:25]
+INFO: [Synth 8-6155] done synthesizing module 'top_wrapper' (0#1) [C:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2016.438 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2016.438 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2016.438 ; gain = 338.203
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2016.438 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'top_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'top_i/zynq_ultra_ps_e_0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0/top_clk_wiz_0_0_in_context.xdc] for cell 'top_i/clk_wiz_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0/top_clk_wiz_0_0_in_context.xdc] for cell 'top_i/clk_wiz_0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0_in_context.xdc] for cell 'top_i/proc_sys_reset_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0_in_context.xdc] for cell 'top_i/proc_sys_reset_0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/top_smartconnect_0_0/top_smartconnect_0_0_in_context.xdc] for cell 'top_i/smartconnect_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/top_smartconnect_0_0/top_smartconnect_0_0_in_context.xdc] for cell 'top_i/smartconnect_0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0_in_context.xdc] for cell 'top_i/axi_fifo_mm_s_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0_in_context.xdc] for cell 'top_i/axi_fifo_mm_s_0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0/top_keccak_core_0_0_in_context.xdc] for cell 'top_i/keccak_core_0'
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0/top_keccak_core_0_0_in_context.xdc] for cell 'top_i/keccak_core_0'
+Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2018.430 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2018.430 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2018.430 ; gain = 340.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2018.430 ; gain = 340.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2018.430 ; gain = 340.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2018.430 ; gain = 340.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2021.535 ; gain = 343.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2734.641 ; gain = 1056.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2734.641 ; gain = 1056.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2745.688 ; gain = 1067.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------+----------+
+|      |BlackBox name           |Instances |
++------+------------------------+----------+
+|1     |top_axi_fifo_mm_s_0_0   |         1|
+|2     |top_clk_wiz_0_0         |         1|
+|3     |top_keccak_core_0_0     |         1|
+|4     |top_proc_sys_reset_0_0  |         1|
+|5     |top_smartconnect_0_0    |         1|
+|6     |top_zynq_ultra_ps_e_0_0 |         1|
++------+------------------------+----------+
+
+Report Cell Usage: 
++------+-----------------------------+------+
+|      |Cell                         |Count |
++------+-----------------------------+------+
+|1     |top_axi_fifo_mm_s_0_0_bbox   |     1|
+|2     |top_clk_wiz_0_0_bbox         |     1|
+|3     |top_keccak_core_0_0_bbox     |     1|
+|4     |top_proc_sys_reset_0_0_bbox  |     1|
+|5     |top_smartconnect_0_0_bbox    |     1|
+|6     |top_zynq_ultra_ps_e_0_0_bbox |     1|
+|7     |IBUF                         |     1|
++------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2995.551 ; gain = 1315.324
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2995.551 ; gain = 1317.316
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2995.551 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2995.551 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+
+Synth Design complete | Checksum: 4b733e54
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2995.551 ; gain = 2397.379
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2995.551 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/top_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 25 01:36:10 2025...

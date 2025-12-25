@@ -54,11 +54,6 @@ entity keccak_top is
 end entity keccak_top;
 
 architecture rtl of keccak_top is
-
-    -- ========================================================================
-    -- Component Declarations
-    -- ========================================================================
-    
     component keccak_top_control_s_axi is
         generic (
             C_S_AXI_ADDR_WIDTH : integer := 6;
@@ -412,9 +407,6 @@ begin
         end if;
     end process;
     
-    -- ========================================================================
-    -- Output stream data generation (combinational)
-    -- ========================================================================
     process(squeeze_idx, state, output_remaining, fsm_state)
         variable bytes_out : unsigned(3 downto 0);
     begin

@@ -1522,8 +1522,8 @@
         }
       },
       "keccak_core_0": {
-        "vlnv": "jakub.blizni.uk:user:keccak_core:1.0",
-        "ip_revision": "7",
+        "vlnv": "jakub.blizni.uk:user:keccak_core:1.1",
+        "ip_revision": "11",
         "xci_name": "top_keccak_core_0_0",
         "xci_path": "ip\\top_keccak_core_0_0\\top_keccak_core_0_0.xci",
         "inst_hier_path": "keccak_core_0",
