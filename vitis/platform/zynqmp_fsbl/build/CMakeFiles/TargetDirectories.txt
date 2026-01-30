@@ -1,0 +1,4 @@
+C:/Users/jakub/projects/rim-projekt/vitis/platform/zynqmp_fsbl/build/CMakeFiles/fsbl.elf.dir
+C:/Users/jakub/projects/rim-projekt/vitis/platform/zynqmp_fsbl/build/CMakeFiles/print_build_info.dir
+C:/Users/jakub/projects/rim-projekt/vitis/platform/zynqmp_fsbl/build/CMakeFiles/edit_cache.dir
+C:/Users/jakub/projects/rim-projekt/vitis/platform/zynqmp_fsbl/build/CMakeFiles/rebuild_cache.dir

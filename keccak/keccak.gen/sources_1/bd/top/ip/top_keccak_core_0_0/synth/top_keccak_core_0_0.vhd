@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -46,8 +46,8 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: jakub.blizni.uk:user:keccak_core:1.1
--- IP Revision: 11
+-- IP VLNV: jakub.blizni.uk:user:keccak_core:1.3
+-- IP Revision: 24
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -57,35 +57,23 @@ ENTITY top_keccak_core_0_0 IS
   PORT (
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
-    input_stream_TDATA : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-    input_stream_TVALID : IN STD_LOGIC;
-    input_stream_TREADY : OUT STD_LOGIC;
-    input_stream_TKEEP : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    input_stream_TSTRB : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    input_stream_TLAST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    output_stream_TDATA : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-    output_stream_TVALID : OUT STD_LOGIC;
-    output_stream_TREADY : IN STD_LOGIC;
-    output_stream_TKEEP : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-    output_stream_TSTRB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-    output_stream_TLAST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    s_axi_control_AWVALID : IN STD_LOGIC;
-    s_axi_control_AWREADY : OUT STD_LOGIC;
-    s_axi_control_AWADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    s_axi_control_WVALID : IN STD_LOGIC;
-    s_axi_control_WREADY : OUT STD_LOGIC;
-    s_axi_control_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_control_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_control_ARVALID : IN STD_LOGIC;
-    s_axi_control_ARREADY : OUT STD_LOGIC;
-    s_axi_control_ARADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    s_axi_control_RVALID : OUT STD_LOGIC;
-    s_axi_control_RREADY : IN STD_LOGIC;
-    s_axi_control_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_control_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_control_BVALID : OUT STD_LOGIC;
-    s_axi_control_BREADY : IN STD_LOGIC;
-    s_axi_control_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    s_axi_AWVALID : IN STD_LOGIC;
+    s_axi_AWREADY : OUT STD_LOGIC;
+    s_axi_AWADDR : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+    s_axi_WVALID : IN STD_LOGIC;
+    s_axi_WREADY : OUT STD_LOGIC;
+    s_axi_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axi_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    s_axi_ARVALID : IN STD_LOGIC;
+    s_axi_ARREADY : OUT STD_LOGIC;
+    s_axi_ARADDR : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+    s_axi_RVALID : OUT STD_LOGIC;
+    s_axi_RREADY : IN STD_LOGIC;
+    s_axi_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axi_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    s_axi_BVALID : OUT STD_LOGIC;
+    s_axi_BREADY : IN STD_LOGIC;
+    s_axi_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     interrupt : OUT STD_LOGIC
   );
 END top_keccak_core_0_0;
@@ -93,50 +81,38 @@ END top_keccak_core_0_0;
 ARCHITECTURE top_keccak_core_0_0_arch OF top_keccak_core_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF top_keccak_core_0_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT keccak_top IS
+  COMPONENT keccak_top_axilite IS
     GENERIC (
-      C_S_AXI_CONTROL_ADDR_WIDTH : INTEGER;
-      C_S_AXI_CONTROL_DATA_WIDTH : INTEGER
+      C_S_AXI_ADDR_WIDTH : INTEGER;
+      C_S_AXI_DATA_WIDTH : INTEGER
     );
     PORT (
       ap_clk : IN STD_LOGIC;
       ap_rst_n : IN STD_LOGIC;
-      input_stream_TDATA : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-      input_stream_TVALID : IN STD_LOGIC;
-      input_stream_TREADY : OUT STD_LOGIC;
-      input_stream_TKEEP : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-      input_stream_TSTRB : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-      input_stream_TLAST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      output_stream_TDATA : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-      output_stream_TVALID : OUT STD_LOGIC;
-      output_stream_TREADY : IN STD_LOGIC;
-      output_stream_TKEEP : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-      output_stream_TSTRB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-      output_stream_TLAST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      s_axi_control_AWVALID : IN STD_LOGIC;
-      s_axi_control_AWREADY : OUT STD_LOGIC;
-      s_axi_control_AWADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-      s_axi_control_WVALID : IN STD_LOGIC;
-      s_axi_control_WREADY : OUT STD_LOGIC;
-      s_axi_control_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s_axi_control_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_control_ARVALID : IN STD_LOGIC;
-      s_axi_control_ARREADY : OUT STD_LOGIC;
-      s_axi_control_ARADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-      s_axi_control_RVALID : OUT STD_LOGIC;
-      s_axi_control_RREADY : IN STD_LOGIC;
-      s_axi_control_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s_axi_control_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-      s_axi_control_BVALID : OUT STD_LOGIC;
-      s_axi_control_BREADY : IN STD_LOGIC;
-      s_axi_control_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      s_axi_AWVALID : IN STD_LOGIC;
+      s_axi_AWREADY : OUT STD_LOGIC;
+      s_axi_AWADDR : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+      s_axi_WVALID : IN STD_LOGIC;
+      s_axi_WREADY : OUT STD_LOGIC;
+      s_axi_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s_axi_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      s_axi_ARVALID : IN STD_LOGIC;
+      s_axi_ARREADY : OUT STD_LOGIC;
+      s_axi_ARADDR : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+      s_axi_RVALID : OUT STD_LOGIC;
+      s_axi_RREADY : IN STD_LOGIC;
+      s_axi_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s_axi_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      s_axi_BVALID : OUT STD_LOGIC;
+      s_axi_BREADY : IN STD_LOGIC;
+      s_axi_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       interrupt : OUT STD_LOGIC
     );
-  END COMPONENT keccak_top;
+  END COMPONENT keccak_top_axilite;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF top_keccak_core_0_0_arch: ARCHITECTURE IS "keccak_top,Vivado 2025.2";
+  ATTRIBUTE X_CORE_INFO OF top_keccak_core_0_0_arch: ARCHITECTURE IS "keccak_top_axilite,Vivado 2025.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF top_keccak_core_0_0_arch : ARCHITECTURE IS "top_keccak_core_0_0,keccak_top,{}";
+  ATTRIBUTE CHECK_LICENSE_TYPE OF top_keccak_core_0_0_arch : ARCHITECTURE IS "top_keccak_core_0_0,keccak_top_axilite,{}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF top_keccak_core_0_0_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -148,83 +124,55 @@ ARCHITECTURE top_keccak_core_0_0_arch OF top_keccak_core_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF ap_rst_n: SIGNAL IS "xilinx.com:signal:reset:1.0 ap_rst_n RST";
   ATTRIBUTE X_INTERFACE_MODE OF ap_rst_n: SIGNAL IS "slave ap_rst_n";
   ATTRIBUTE X_INTERFACE_PARAMETER OF ap_rst_n: SIGNAL IS "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TDATA";
-  ATTRIBUTE X_INTERFACE_MODE OF input_stream_TDATA: SIGNAL IS "slave input_stream";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF input_stream_TDATA: SIGNAL IS "XIL_INTERFACENAME input_stream, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TKEEP: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TKEEP";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TLAST: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TLAST";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TREADY: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TSTRB: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TSTRB";
-  ATTRIBUTE X_INTERFACE_INFO OF input_stream_TVALID: SIGNAL IS "xilinx.com:interface:axis:1.0 input_stream TVALID";
   ATTRIBUTE X_INTERFACE_INFO OF interrupt: SIGNAL IS "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT";
   ATTRIBUTE X_INTERFACE_MODE OF interrupt: SIGNAL IS "master interrupt";
   ATTRIBUTE X_INTERFACE_PARAMETER OF interrupt: SIGNAL IS "XIL_INTERFACENAME interrupt, SENSITIVITY LEVEL_HIGH, PortWidth 1";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TDATA";
-  ATTRIBUTE X_INTERFACE_MODE OF output_stream_TDATA: SIGNAL IS "master output_stream";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF output_stream_TDATA: SIGNAL IS "XIL_INTERFACENAME output_stream, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TKEEP: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TKEEP";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TLAST: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TLAST";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TREADY: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TSTRB: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TSTRB";
-  ATTRIBUTE X_INTERFACE_INFO OF output_stream_TVALID: SIGNAL IS "xilinx.com:interface:axis:1.0 output_stream TVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_ARADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control ARADDR";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_ARREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control ARREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_ARVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control ARVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_AWADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control AWADDR";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_AWREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control AWREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_AWVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control AWVALID";
-  ATTRIBUTE X_INTERFACE_MODE OF s_axi_control_AWVALID: SIGNAL IS "slave s_axi_control";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_control_AWVALID: SIGNAL IS "XIL_INTERFACENAME s_axi_control, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 6, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, " & 
-"WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_BREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control BREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_BRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control BRESP";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_BVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control BVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_RDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control RDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_RREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control RREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_RRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control RRESP";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_RVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control RVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WSTRB: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WSTRB";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_ARADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi ARADDR";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_ARREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi ARREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_ARVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi ARVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_AWADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi AWADDR";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_AWREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi AWREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_AWVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi AWVALID";
+  ATTRIBUTE X_INTERFACE_MODE OF s_axi_AWVALID: SIGNAL IS "slave s_axi";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_AWVALID: SIGNAL IS "XIL_INTERFACENAME s_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BI" & 
+"TS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_BREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi BREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_BRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi BRESP";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_BVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi BVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_RDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_RREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_RRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RRESP";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_RVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_WDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi WDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_WREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi WREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_WSTRB: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi WSTRB";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_WVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi WVALID";
 BEGIN
-  U0 : keccak_top
+  U0 : keccak_top_axilite
     GENERIC MAP (
-      C_S_AXI_CONTROL_ADDR_WIDTH => 6,
-      C_S_AXI_CONTROL_DATA_WIDTH => 32
+      C_S_AXI_ADDR_WIDTH => 7,
+      C_S_AXI_DATA_WIDTH => 32
     )
     PORT MAP (
       ap_clk => ap_clk,
       ap_rst_n => ap_rst_n,
-      input_stream_TDATA => input_stream_TDATA,
-      input_stream_TVALID => input_stream_TVALID,
-      input_stream_TREADY => input_stream_TREADY,
-      input_stream_TKEEP => input_stream_TKEEP,
-      input_stream_TSTRB => input_stream_TSTRB,
-      input_stream_TLAST => input_stream_TLAST,
-      output_stream_TDATA => output_stream_TDATA,
-      output_stream_TVALID => output_stream_TVALID,
-      output_stream_TREADY => output_stream_TREADY,
-      output_stream_TKEEP => output_stream_TKEEP,
-      output_stream_TSTRB => output_stream_TSTRB,
-      output_stream_TLAST => output_stream_TLAST,
-      s_axi_control_AWVALID => s_axi_control_AWVALID,
-      s_axi_control_AWREADY => s_axi_control_AWREADY,
-      s_axi_control_AWADDR => s_axi_control_AWADDR,
-      s_axi_control_WVALID => s_axi_control_WVALID,
-      s_axi_control_WREADY => s_axi_control_WREADY,
-      s_axi_control_WDATA => s_axi_control_WDATA,
-      s_axi_control_WSTRB => s_axi_control_WSTRB,
-      s_axi_control_ARVALID => s_axi_control_ARVALID,
-      s_axi_control_ARREADY => s_axi_control_ARREADY,
-      s_axi_control_ARADDR => s_axi_control_ARADDR,
-      s_axi_control_RVALID => s_axi_control_RVALID,
-      s_axi_control_RREADY => s_axi_control_RREADY,
-      s_axi_control_RDATA => s_axi_control_RDATA,
-      s_axi_control_RRESP => s_axi_control_RRESP,
-      s_axi_control_BVALID => s_axi_control_BVALID,
-      s_axi_control_BREADY => s_axi_control_BREADY,
-      s_axi_control_BRESP => s_axi_control_BRESP,
+      s_axi_AWVALID => s_axi_AWVALID,
+      s_axi_AWREADY => s_axi_AWREADY,
+      s_axi_AWADDR => s_axi_AWADDR,
+      s_axi_WVALID => s_axi_WVALID,
+      s_axi_WREADY => s_axi_WREADY,
+      s_axi_WDATA => s_axi_WDATA,
+      s_axi_WSTRB => s_axi_WSTRB,
+      s_axi_ARVALID => s_axi_ARVALID,
+      s_axi_ARREADY => s_axi_ARREADY,
+      s_axi_ARADDR => s_axi_ARADDR,
+      s_axi_RVALID => s_axi_RVALID,
+      s_axi_RREADY => s_axi_RREADY,
+      s_axi_RDATA => s_axi_RDATA,
+      s_axi_RRESP => s_axi_RRESP,
+      s_axi_BVALID => s_axi_BVALID,
+      s_axi_BREADY => s_axi_BREADY,
+      s_axi_BRESP => s_axi_BRESP,
       interrupt => interrupt
     );
 END top_keccak_core_0_0_arch;

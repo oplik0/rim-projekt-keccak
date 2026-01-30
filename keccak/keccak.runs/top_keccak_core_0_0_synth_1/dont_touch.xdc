@@ -4,21 +4,21 @@
 # IP: C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/sources_1/bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0.xci
 # IP: The module: 'top_keccak_core_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc
+# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc
 # XDC: The top module name and the constraint reference have the same name: 'top_keccak_core_0_0'. Do not add the DONT_TOUCH constraint.
 set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
 
-# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc
+# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc
 # XDC: The top module name and the constraint reference have the same name: 'top_keccak_core_0_0'. Do not add the DONT_TOUCH constraint.
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
 
 # IP: C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/sources_1/bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0.xci
 # IP: The module: 'top_keccak_core_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc
+# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc
 # XDC: The top module name and the constraint reference have the same name: 'top_keccak_core_0_0'. Do not add the DONT_TOUCH constraint.
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
 
-# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc
+# XDC: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc
 # XDC: The top module name and the constraint reference have the same name: 'top_keccak_core_0_0'. Do not add the DONT_TOUCH constraint.
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet

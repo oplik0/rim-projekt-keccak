@@ -57,9 +57,16 @@ if {$::dispatch::connected} {
 
 OPTRACE "top_keccak_core_0_0_synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param power.BramSDPPropagationFix 1
 set_param general.usePosixSpawnForFork 1
-set_param bd.open.in_stealth_mode 1
-set_param synth.incrementalSynthesisCache C:/Users/jakub/AppData/Local/Temp/.Xil_jakub/Vivado-15412-DESKTOP-DI4989O/incrSyn
+set_param chipscope.maxJobs 6
+set_param physdb.placeDBImplUsesPlaceStorage 0
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param synth.incrementalSynthesisCache C:/AMDDesignTools/2025.2/Vivado/bin/.Xil/Vivado-12928-DESKTOP-DI4989O/incrSyn
+set_param power.enableLutRouteBelPower 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
@@ -87,8 +94,8 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_ip -quiet C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/sources_1/bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

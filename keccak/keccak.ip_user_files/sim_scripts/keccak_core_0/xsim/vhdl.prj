@@ -1,9 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_pkg.vhd" \
-"../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_f1600.vhd" \
-"../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_top_control_s_axi.vhd" \
-"../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_top.vhd" \
-"../../../../keccak.gen/sources_1/ip/keccak_core_0/sim/keccak_core_0.vhd" \
-
-# Do not sort compile order
-nosort

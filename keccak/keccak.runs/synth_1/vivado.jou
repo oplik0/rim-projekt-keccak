@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Dec 25 01:35:28 2025
-# Process ID         : 36220
+# Start of session at: Mon Jan 26 21:34:50 2026
+# Process ID         : 46364
 # Current directory  : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1
 # Command line       : vivado.exe -log top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_wrapper.tcl
 # Log file           : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/synth_1/top_wrapper.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 67756 MB
-# Swap memory        : 9663 MB
-# Total Virtual      : 77420 MB
-# Available Virtual  : 34276 MB
+# Swap memory        : 12782 MB
+# Total Virtual      : 80538 MB
+# Available Virtual  : 7616 MB
 #-----------------------------------------------------------
 source top_wrapper.tcl -notrace

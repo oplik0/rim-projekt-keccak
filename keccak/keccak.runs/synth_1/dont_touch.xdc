@@ -7,17 +7,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top || ORIG
 # IP: bd/top/ip/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_zynq_ultra_ps_e_0_0 || ORIG_REF_NAME==top_zynq_ultra_ps_e_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_clk_wiz_0_0 || ORIG_REF_NAME==top_clk_wiz_0_0} -quiet] -quiet
-
 # IP: bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_proc_sys_reset_0_0 || ORIG_REF_NAME==top_proc_sys_reset_0_0} -quiet] -quiet
 
 # IP: bd/top/ip/top_smartconnect_0_0/top_smartconnect_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_smartconnect_0_0 || ORIG_REF_NAME==top_smartconnect_0_0} -quiet] -quiet
-
-# IP: bd/top/ip/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_fifo_mm_s_0_0 || ORIG_REF_NAME==top_axi_fifo_mm_s_0_0} -quiet] -quiet
 
 # IP: bd/top/ip/top_keccak_core_0_0/top_keccak_core_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_keccak_core_0_0 || ORIG_REF_NAME==top_keccak_core_0_0} -quiet] -quiet

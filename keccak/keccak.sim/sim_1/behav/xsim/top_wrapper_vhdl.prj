@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../keccak.ip_user_files/bd/top/ip/top_proc_sys_reset_0_0/sim/top_proc_sys_reset_0_0.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_acc6_psr_aclk_0.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ipshared/60a2/838b/keccak_pkg.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ipshared/60a2/838b/keccak_f1600.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ipshared/60a2/src/keccak_top_control_s_axi.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ipshared/60a2/src/keccak_top.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd" \
+"../../../../keccak.ip_user_files/bd/top/ip/top_keccak_core_0_0/sim/top_keccak_core_0_0.vhd" \
+"../../../../keccak.ip_user_files/bd/top/sim/top.vhd" \
+
+# Do not sort compile order
+nosort

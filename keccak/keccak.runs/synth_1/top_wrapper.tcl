@@ -57,9 +57,16 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param power.BramSDPPropagationFix 1
 set_param general.usePosixSpawnForFork 1
-set_param bd.open.in_stealth_mode 1
-set_param synth.incrementalSynthesisCache C:/Users/jakub/AppData/Local/Temp/.Xil_jakub/Vivado-15412-DESKTOP-DI4989O/incrSyn
+set_param chipscope.maxJobs 6
+set_param physdb.placeDBImplUsesPlaceStorage 0
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param synth.incrementalSynthesisCache C:/AMDDesignTools/2025.2/Vivado/bin/.Xil/Vivado-12928-DESKTOP-DI4989O/incrSyn
+set_param power.enableLutRouteBelPower 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
@@ -89,9 +96,6 @@ read_verilog -library xil_defaultlib C:/Users/jakub/projects/rim-projekt/keccak/
 add_files C:/Users/jakub/projects/rim-projekt/keccak/keccak.srcs/sources_1/bd/top/top.bd
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_zynq_ultra_ps_e_0_0/top_zynq_ultra_ps_e_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_1/bd_acc6_psr_aclk_0_board.xdc]
@@ -128,17 +132,10 @@ set_property used_in_implementation false [get_files -all c:/Users/jakub/project
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_38/bd_acc6_m00awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_39/bd_acc6_m00wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_40/bd_acc6_m00bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_42/bd_acc6_m01s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_43/bd_acc6_m01arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_44/bd_acc6_m01rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_45/bd_acc6_m01awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_46/bd_acc6_m01wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/bd_0/ip/ip_47/bd_acc6_m01bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_smartconnect_0_0/smartconnect.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_axi_fifo_mm_s_0_0/top_axi_fifo_mm_s_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/top_ooc.xdc]
 
 OPTRACE "Adding files" END { }

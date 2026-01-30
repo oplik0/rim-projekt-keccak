@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Dec 25 01:40:40 2025
+| Date         : Mon Jan 26 21:39:41 2026
 | Host         : DESKTOP-DI4989O running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_wrapper_methodology_drc_routed.rpt -pb top_wrapper_methodology_drc_routed.pb -rpx top_wrapper_methodology_drc_routed.rpx
 | Design       : top_wrapper
@@ -70,15 +70,15 @@ Related violations: <none>
 XDCC-1#1 Warning
 Scoped Clock constraint overwritten with the same name  
 A new clock constraint create_clock overrides a previous scoped clock constraint with the same name. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
-New: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc (Line: 1))
-Previous: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc (Line: 1))
+New: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc (Line: 1))
+Previous: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc (Line: 1))
 Related violations: <none>
 
 XDCC-7#1 Warning
 Scoped Clock constraint overwritten on the same source  
 A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
-New: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc (Line: 1))
-Previous: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc (Line: 1))
+New: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc (Line: 1))
+Previous: create_clock -period 5.000 -name ap_clk -waveform {0.000 2.500} [get_ports -scoped_to_current_instance ap_clk] (Source: c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc (Line: 1))
 Related violations: <none>
 
 

@@ -289,8 +289,12 @@ begin
                         
                         if input_stream_TVALID = '1' and input_ready_i = '1' then
                             -- Count valid bytes
-                            valid_bytes := count_keep(input_stream_TKEEP);
+                            -- valid_bytes := count_keep(input_stream_TKEEP);
+                            -- Treat any valid beat as a full 8-byte word (ignore TKEEP)
+                            -- This avoids stalls if the upstream FIFO does not drive TKEEP.
+                            valid_bytes := to_unsigned(8, 4);
                             
+                            -- XOR input data into current lane                            
                             -- XOR input data into current lane (only if there are valid bytes)
                             if valid_bytes > 0 then
                                 state(to_integer(lane_idx)) <= 

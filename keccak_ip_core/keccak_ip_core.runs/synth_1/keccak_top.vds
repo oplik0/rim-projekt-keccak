@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Dec 25 01:25:38 2025
-# Process ID         : 7260
+# Start of session at: Mon Jan 26 20:06:22 2026
+# Process ID         : 30852
 # Current directory  : C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_core.runs/synth_1
 # Command line       : vivado.exe -log keccak_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source keccak_top.tcl
 # Log file           : C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_core.runs/synth_1/keccak_top.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 67756 MB
-# Swap memory        : 9663 MB
-# Total Virtual      : 77420 MB
-# Available Virtual  : 36495 MB
+# Swap memory        : 12782 MB
+# Total Virtual      : 80538 MB
+# Available Virtual  : 5162 MB
 #-----------------------------------------------------------
 source keccak_top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -37,9 +37,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18416
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 51144
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1836.914 ; gain = 212.301
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1835.129 ; gain = 212.570
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'keccak_top' [C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_core.srcs/sources_1/imports/vhdl/keccak_top.vhd:56]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
@@ -85,6 +86,14 @@ WARNING: [Synth 8-7129] Port WDATA[17] in module keccak_top_control_s_axi is eit
 WARNING: [Synth 8-7129] Port WDATA[16] in module keccak_top_control_s_axi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WSTRB[3] in module keccak_top_control_s_axi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WSTRB[2] in module keccak_top_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[7] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[6] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[5] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[4] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[3] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[2] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[1] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[0] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[7] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[6] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[5] in module keccak_top is either unconnected or has no load
@@ -94,18 +103,18 @@ WARNING: [Synth 8-7129] Port input_stream_TSTRB[2] in module keccak_top is eithe
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[1] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[0] in module keccak_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1986.941 ; gain = 362.328
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1983.980 ; gain = 361.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1986.941 ; gain = 362.328
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1983.980 ; gain = 361.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1986.941 ; gain = 362.328
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1983.980 ; gain = 361.422
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 1986.941 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 1983.980 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -114,15 +123,15 @@ Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_c
 Finished Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_core.srcs/constrs_1/imports/vhdl/keccak_top.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1997.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2073.777 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1997.738 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 2073.777 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1997.738 ; gain = 373.125
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2073.777 ; gain = 451.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -130,13 +139,13 @@ Start Loading Part and Timing Information
 Loading part: xck26-sfvc784-2LV-c
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1997.738 ; gain = 373.125
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2073.777 ; gain = 451.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1997.738 ; gain = 373.125
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2073.777 ; gain = 451.219
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'keccak_top_control_s_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'keccak_top_control_s_axi'
@@ -183,7 +192,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_pipelined_fsm.fsm_reg'
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'keccak_top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1997.738 ; gain = 373.125
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2073.777 ; gain = 451.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -194,7 +203,6 @@ Detailed RTL Component Info :
 	   2 Input   16 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 4     
-	   8 Input    4 Bit       Adders := 1     
 +---XORs : 
 	   5 Input     64 Bit         XORs := 5     
 	   2 Input     64 Bit         XORs := 56    
@@ -250,6 +258,14 @@ WARNING: [Synth 8-3917] design keccak_top has port output_stream_TSTRB[3] driven
 WARNING: [Synth 8-3917] design keccak_top has port output_stream_TSTRB[2] driven by constant 1
 WARNING: [Synth 8-3917] design keccak_top has port output_stream_TSTRB[1] driven by constant 1
 WARNING: [Synth 8-3917] design keccak_top has port output_stream_TSTRB[0] driven by constant 1
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[7] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[6] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[5] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[4] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[3] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[2] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[1] in module keccak_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port input_stream_TKEEP[0] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[7] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[6] in module keccak_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port input_stream_TSTRB[5] in module keccak_top is either unconnected or has no load
@@ -261,7 +277,7 @@ WARNING: [Synth 8-7129] Port input_stream_TSTRB[0] in module keccak_top is eithe
 INFO: [Synth 8-3332] Sequential element (FSM_onehot_wstate_reg[0]) is unused and will be removed from module keccak_top_control_s_axi.
 INFO: [Synth 8-3332] Sequential element (FSM_onehot_rstate_reg[0]) is unused and will be removed from module keccak_top_control_s_axi.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2351.684 ; gain = 727.070
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2346.258 ; gain = 723.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -282,19 +298,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 2767.684 ; gain = 1143.070
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 2759.137 ; gain = 1136.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:23 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:20 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:26 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -312,37 +328,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:29 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:29 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -359,44 +375,44 @@ Report Cell Usage:
 |      |Cell  |Count |
 +------+------+------+
 |1     |BUFG  |     1|
-|2     |LUT1  |     1|
-|3     |LUT2  |  1638|
-|4     |LUT3  |   148|
-|5     |LUT4  |    63|
-|6     |LUT5  |  1873|
-|7     |LUT6  |  5685|
-|8     |MUXF7 |   586|
-|9     |MUXF8 |   256|
-|10    |FDRE  |  5022|
+|2     |LUT1  |     2|
+|3     |LUT2  |  1651|
+|4     |LUT3  |   368|
+|5     |LUT4  |   700|
+|6     |LUT5  |   508|
+|7     |LUT6  |  6186|
+|8     |MUXF7 |   437|
+|9     |MUXF8 |   167|
+|10    |FDRE  |  4992|
 |11    |FDSE  |     2|
-|12    |IBUF  |   110|
+|12    |IBUF  |   102|
 |13    |OBUF  |   125|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:25 . Memory (MB): peak = 3303.664 ; gain = 1668.254
-Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 3303.664 ; gain = 1679.051
+Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 3249.930 ; gain = 1537.574
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 3249.930 ; gain = 1627.371
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 3303.664 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 953 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 3249.930 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 707 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'keccak_top' is not ideal for floorplanning, since the cellview 'keccak_f1600' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3303.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3249.930 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 111 instances were transformed.
+  A total of 103 instances were transformed.
   BUFG => BUFGCE: 1 instance 
-  IBUF => IBUF (IBUFCTRL, INBUF): 110 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 102 instances
 
-Synth Design complete | Checksum: 454d36d1
+Synth Design complete | Checksum: c6ef232f
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 54 Warnings, 0 Critical Warnings and 0 Errors encountered.
+43 Infos, 71 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:44 . Memory (MB): peak = 3303.664 ; gain = 2758.359
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3303.664 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:31 ; elapsed = 00:01:36 . Memory (MB): peak = 3249.930 ; gain = 2703.996
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 3249.930 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jakub/projects/rim-projekt/keccak_ip_core/keccak_ip_core.runs/synth_1/keccak_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file keccak_top_utilization_synth.rpt -pb keccak_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 25 01:27:28 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 26 20:08:05 2026...

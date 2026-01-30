@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Dec 25 01:33:37 2025
-# Process ID         : 23192
+# Start of session at: Mon Jan 26 21:32:46 2026
+# Process ID         : 47800
 # Current directory  : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1
 # Command line       : vivado.exe -log top_keccak_core_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_keccak_core_0_0.tcl
 # Log file           : C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1/top_keccak_core_0_0.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 12
 # CPU Logical cores  : 24
 # Host memory        : 67756 MB
-# Swap memory        : 9663 MB
-# Total Virtual      : 77420 MB
-# Available Virtual  : 33318 MB
+# Swap memory        : 12782 MB
+# Total Virtual      : 80538 MB
+# Available Virtual  : 7305 MB
 #-----------------------------------------------------------
 source top_keccak_core_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -34,90 +34,60 @@ INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 9208
+INFO: [Synth 8-7075] Helper process launched with PID 4156
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.066 ; gain = 210.109
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1835.590 ; gain = 210.457
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_keccak_core_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:93]
-	Parameter C_S_AXI_CONTROL_ADDR_WIDTH bound to: 6 - type: integer 
-	Parameter C_S_AXI_CONTROL_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_top' declared at 'c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:8' bound to instance 'U0' of component 'keccak_top' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:191]
-INFO: [Synth 8-638] synthesizing module 'keccak_top' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:56]
-	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'top_keccak_core_0_0' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:81]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_top_control_s_axi' declared at 'c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top_control_s_axi.vhd:12' bound to instance 'control_inst' of component 'keccak_top_control_s_axi' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:187]
-INFO: [Synth 8-638] synthesizing module 'keccak_top_control_s_axi' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top_control_s_axi.vhd:84]
-INFO: [Synth 8-256] done synthesizing module 'keccak_top_control_s_axi' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top_control_s_axi.vhd:84]
+INFO: [Synth 8-3491] module 'keccak_top_axilite' declared at 'c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:30' bound to instance 'U0' of component 'keccak_top_axilite' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:151]
+INFO: [Synth 8-638] synthesizing module 'keccak_top_axilite' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:62]
 	Parameter G_PIPELINE bound to: 1 - type: bool 
-INFO: [Synth 8-3491] module 'keccak_f1600' declared at 'c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_f1600.vhd:8' bound to instance 'perm_inst' of component 'keccak_f1600' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:223]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_f1600.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_f1600.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'keccak_top' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:56]
-INFO: [Synth 8-256] done synthesizing module 'top_keccak_core_0_0' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:93]
-INFO: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top_control_s_axi.vhd:320]
-WARNING: [Synth 8-6014] Unused sequential element ap_ready_i_reg was removed.  [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/ec97/src/keccak_top.vhd:219]
-INFO: [Synth 8-7129] Port AWADDR[1] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port AWADDR[0] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[31] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[30] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[29] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[28] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[27] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[26] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[25] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[24] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[23] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[22] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[21] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[20] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[19] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[18] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[17] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WDATA[16] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WSTRB[3] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port WSTRB[2] in module keccak_top_control_s_axi is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[7] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[6] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[5] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[4] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[3] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[2] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[1] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[0] in module keccak_top is either unconnected or has no load
+INFO: [Synth 8-3491] module 'keccak_f1600' declared at 'c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_f1600.vhd:8' bound to instance 'perm_inst' of component 'keccak_f1600' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:182]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600' [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_f1600.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_f1600.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'keccak_top_axilite' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'top_keccak_core_0_0' (0#1) [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/synth/top_keccak_core_0_0.vhd:81]
+WARNING: [Synth 8-6014] Unused sequential element raddr_reg_reg was removed.  [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:302]
+WARNING: [Synth 8-6014] Unused sequential element ap_ready_i_reg was removed.  [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ipshared/60a2/838b/keccak_top_axilite.vhd:272]
+INFO: [Synth 8-7129] Port s_axi_WSTRB[3] in module keccak_top_axilite is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_WSTRB[2] in module keccak_top_axilite is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_WSTRB[1] in module keccak_top_axilite is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1993.770 ; gain = 366.812
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1993.984 ; gain = 368.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1993.770 ; gain = 366.812
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1993.984 ; gain = 368.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1993.770 ; gain = 366.812
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1993.984 ; gain = 368.852
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1993.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1993.984 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc] for cell 'U0'
 Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc] for cell 'U0'
-WARNING: [Constraints 18-619] A clock with name 'ap_clk' already exists, overwriting the previous clock with the same name. [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc:1]
 Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/dfca/keccak_top.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc] for cell 'U0'
+WARNING: [Constraints 18-619] A clock with name 'ap_clk' already exists, overwriting the previous clock with the same name. [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc:1]
+Finished Parsing XDC File [c:/Users/jakub/projects/rim-projekt/keccak/keccak.gen/sources_1/bd/top/ip/top_keccak_core_0_0/src/keccak_top.xdc] for cell 'U0'
 Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2092.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2098.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 2092.012 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 2098.605 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2092.012 ; gain = 465.055
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2098.605 ; gain = 473.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -125,37 +95,18 @@ Start Loading Part and Timing Information
 Loading part: xck26-sfvc784-2LV-c
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2092.012 ; gain = 465.055
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2098.605 ; gain = 473.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2092.012 ; gain = 465.055
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2098.605 ; gain = 473.473
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'keccak_top_control_s_axi'
-INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'keccak_top_control_s_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'gen_pipelined_fsm.fsm_reg' in module 'keccak_f1600'
-INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'keccak_top'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  iSTATE |                             0001 |                              011
-*
-                  wridle |                             0010 |                              000
-                  wrdata |                             0100 |                              001
-                  wrresp |                             1000 |                              010
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'keccak_top_control_s_axi'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  iSTATE |                              001 |                              110
-*
-                  rdidle |                              010 |                              100
-                  rddata |                              100 |                              101
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'keccak_top_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'axi_wstate_reg' in module 'keccak_top_axilite'
+INFO: [Synth 8-802] inferred FSM for state register 'axi_rstate_reg' in module 'keccak_top_axilite'
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'keccak_top_axilite'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -167,18 +118,36 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_pipelined_fsm.fsm_reg'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  s_idle |                              000 |                              000
-           s_absorb_read |                              001 |                              001
-      s_absorb_wait_perm |                              010 |                              010
-               s_padding |                              011 |                              011
-            s_final_perm |                              100 |                              100
-        s_squeeze_output |                              101 |                              101
-                  s_done |                              110 |                              111
-          s_squeeze_perm |                              111 |                              110
+                axi_idle |                              001 |                               00
+               axi_write |                              010 |                               01
+                axi_resp |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'keccak_top'
+INFO: [Synth 8-3354] encoded FSM with state register 'axi_wstate_reg' using encoding 'one-hot' in module 'keccak_top_axilite'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                axi_idle |                                0 |                               00
+                axi_read |                                1 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'axi_rstate_reg' using encoding 'sequential' in module 'keccak_top_axilite'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                             0000 |                             0000
+           s_absorb_wait |                             0001 |                             0010
+        s_absorb_process |                             0010 |                             0011
+               s_padding |                             0011 |                             0101
+            s_final_perm |                             0100 |                             0110
+        s_squeeze_output |                             0101 |                             0111
+                  s_done |                             0110 |                             1010
+      s_wait_start_clear |                             0111 |                             0001
+          s_squeeze_perm |                             1000 |                             1001
+          s_squeeze_wait |                             1001 |                             1000
+           s_absorb_perm |                             1010 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'keccak_top_axilite'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2092.012 ; gain = 465.055
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2098.605 ; gain = 473.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -186,42 +155,37 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   33 Bit       Adders := 1     
-	   2 Input   16 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 3     
 	   2 Input    5 Bit       Adders := 4     
-	   8 Input    4 Bit       Adders := 1     
 +---XORs : 
-	   5 Input     64 Bit         XORs := 5     
 	   2 Input     64 Bit         XORs := 56    
+	   5 Input     64 Bit         XORs := 5     
 	   2 Input      8 Bit         XORs := 3     
-	   2 Input      1 Bit         XORs := 9     
+	   2 Input      2 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 7     
 +---Registers : 
-	               64 Bit    Registers := 75    
-	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 2     
-	                8 Bit    Registers := 4     
-	                6 Bit    Registers := 1     
+	               64 Bit    Registers := 76    
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 4     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 18    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 13    
 +---Muxes : 
-	   3 Input   64 Bit        Muxes := 25    
 	   2 Input   64 Bit        Muxes := 27    
-	   8 Input   64 Bit        Muxes := 50    
-	   8 Input   16 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 1     
-	   8 Input    8 Bit        Muxes := 2     
+	  11 Input   64 Bit        Muxes := 51    
+	   3 Input   64 Bit        Muxes := 25    
+	  11 Input   16 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 2     
+	  11 Input    5 Bit        Muxes := 2     
 	   3 Input    5 Bit        Muxes := 1     
-	   8 Input    5 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 4     
-	   4 Input    4 Bit        Muxes := 1     
-	   8 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 5     
-	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 110   
-	   3 Input    1 Bit        Muxes := 7     
-	   8 Input    1 Bit        Muxes := 15    
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 7     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 119   
+	  11 Input    1 Bit        Muxes := 20    
+	   3 Input    1 Bit        Muxes := 19    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -237,18 +201,11 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7129] Port input_stream_TSTRB[7] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[6] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[5] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[4] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[3] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[2] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[1] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-7129] Port input_stream_TSTRB[0] in module keccak_top is either unconnected or has no load
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_wstate_reg[0]) is unused and will be removed from module keccak_top_control_s_axi.
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_rstate_reg[0]) is unused and will be removed from module keccak_top_control_s_axi.
+INFO: [Synth 8-7129] Port s_axi_WSTRB[3] in module keccak_top_axilite is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_WSTRB[2] in module keccak_top_axilite is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_WSTRB[1] in module keccak_top_axilite is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2328.844 ; gain = 701.887
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2303.668 ; gain = 678.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -270,19 +227,19 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'ap_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 2749.801 ; gain = 1122.844
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 2748.910 ; gain = 1123.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:01:24 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Technology Mapping : Time (s): cpu = 00:01:38 ; elapsed = 00:01:40 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -300,37 +257,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished IO Insertion : Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:42 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:42 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -343,47 +300,48 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT1  |     1|
-|2     |LUT2  |    37|
-|3     |LUT3  |  1719|
-|4     |LUT4  |   121|
-|5     |LUT5  |  1027|
-|6     |LUT6  |  6400|
-|7     |MUXF7 |   784|
-|8     |MUXF8 |   256|
-|9     |FDRE  |  5004|
-|10    |FDSE  |     2|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |     1|
+|2     |LUT1   |     2|
+|3     |LUT2   |    67|
+|4     |LUT3   |  1676|
+|5     |LUT4   |   317|
+|6     |LUT5   |  2099|
+|7     |LUT6   |  5416|
+|8     |MUXF7  |   590|
+|9     |MUXF8  |   256|
+|10    |FDRE   |  5147|
+|11    |FDSE   |     3|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:13 ; elapsed = 00:01:22 . Memory (MB): peak = 3363.734 ; gain = 1638.535
-Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 3363.734 ; gain = 1736.777
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:01:40 . Memory (MB): peak = 3491.281 ; gain = 1761.527
+Synthesis Optimization Complete : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 3491.281 ; gain = 1866.148
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 3363.734 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1040 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 3491.281 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 847 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top_keccak_core_0_0' is not ideal for floorplanning, since the cellview 'keccak_f1600' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3363.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 3491.281 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4223da36
+Synth Design complete | Checksum: 12dbc8ba
 INFO: [Common 17-83] Releasing license: Synthesis
-78 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+42 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 3363.734 ; gain = 2770.047
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3363.734 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:50 ; elapsed = 00:01:53 . Memory (MB): peak = 3491.281 ; gain = 2898.344
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 3491.281 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1/top_keccak_core_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP top_keccak_core_0_0, cache-ID = 8aa2e84a49561538
-INFO: [Coretcl 2-1174] Renamed 3 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 3363.734 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP top_keccak_core_0_0, cache-ID = 3ac64ba76ba964a7
+INFO: [Coretcl 2-1174] Renamed 2 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 3491.281 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jakub/projects/rim-projekt/keccak/keccak.runs/top_keccak_core_0_0_synth_1/top_keccak_core_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_keccak_core_0_0_utilization_synth.rpt -pb top_keccak_core_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 25 01:35:25 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 26 21:34:48 2026...

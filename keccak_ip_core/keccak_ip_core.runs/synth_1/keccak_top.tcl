@@ -57,10 +57,18 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param power.BramSDPPropagationFix 1
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache C:/Users/jakub/AppData/Local/Temp/.Xil_jakub/Vivado-15412-DESKTOP-DI4989O/incrSyn
+set_param chipscope.maxJobs 6
+set_param physdb.placeDBImplUsesPlaceStorage 0
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param synth.incrementalSynthesisCache C:/AMDDesignTools/2025.2/Vivado/bin/.Xil/Vivado-12928-DESKTOP-DI4989O/incrSyn
+set_param power.enableLutRouteBelPower 1
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xck26-sfvc784-2LV-c
 

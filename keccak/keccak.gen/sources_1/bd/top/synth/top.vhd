@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
---Date        : Thu Dec 25 01:33:07 2025
+--Date        : Mon Jan 26 21:32:06 2026
 --Host        : DESKTOP-DI4989O running 64-bit major release  (build 9200)
 --Command     : generate_target top.bd
 --Design      : top
@@ -17,7 +17,7 @@ entity top is
     reset_rtl : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of top : entity is "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_clkrst_cnt=1,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of top : entity is "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_clkrst_cnt=1,da_zynq_ultra_ps_e_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of top : entity is "top.hwdef";
 end top;
@@ -111,14 +111,6 @@ architecture STRUCTURE of top is
     pl_clk1 : out STD_LOGIC
   );
   end component top_zynq_ultra_ps_e_0_0;
-  component top_clk_wiz_0_0 is
-  port (
-    reset : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-  end component top_clk_wiz_0_0;
   component top_proc_sys_reset_0_0 is
   port (
     slowest_sync_clk : in STD_LOGIC;
@@ -215,7 +207,7 @@ architecture STRUCTURE of top is
     S01_AXI_rlast : out STD_LOGIC;
     S01_AXI_rvalid : out STD_LOGIC;
     S01_AXI_rready : in STD_LOGIC;
-    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 6 downto 0 );
     M00_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M00_AXI_awvalid : out STD_LOGIC;
     M00_AXI_awready : in STD_LOGIC;
@@ -226,119 +218,46 @@ architecture STRUCTURE of top is
     M00_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M00_AXI_bvalid : in STD_LOGIC;
     M00_AXI_bready : out STD_LOGIC;
-    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 6 downto 0 );
     M00_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M00_AXI_arvalid : out STD_LOGIC;
     M00_AXI_arready : in STD_LOGIC;
     M00_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M00_AXI_rvalid : in STD_LOGIC;
-    M00_AXI_rready : out STD_LOGIC;
-    M01_AXI_awaddr : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    M01_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M01_AXI_awvalid : out STD_LOGIC;
-    M01_AXI_awready : in STD_LOGIC;
-    M01_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M01_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M01_AXI_wvalid : out STD_LOGIC;
-    M01_AXI_wready : in STD_LOGIC;
-    M01_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M01_AXI_bvalid : in STD_LOGIC;
-    M01_AXI_bready : out STD_LOGIC;
-    M01_AXI_araddr : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    M01_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M01_AXI_arvalid : out STD_LOGIC;
-    M01_AXI_arready : in STD_LOGIC;
-    M01_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    M01_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M01_AXI_rvalid : in STD_LOGIC;
-    M01_AXI_rready : out STD_LOGIC
+    M00_AXI_rready : out STD_LOGIC
   );
   end component top_smartconnect_0_0;
-  component top_axi_fifo_mm_s_0_0 is
-  port (
-    interrupt : out STD_LOGIC;
-    s_axi_aclk : in STD_LOGIC;
-    s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rvalid : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    mm2s_prmry_reset_out_n : out STD_LOGIC;
-    axi_str_txd_tvalid : out STD_LOGIC;
-    axi_str_txd_tready : in STD_LOGIC;
-    axi_str_txd_tlast : out STD_LOGIC;
-    axi_str_txd_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s2mm_prmry_reset_out_n : out STD_LOGIC;
-    axi_str_rxd_tvalid : in STD_LOGIC;
-    axi_str_rxd_tready : out STD_LOGIC;
-    axi_str_rxd_tlast : in STD_LOGIC;
-    axi_str_rxd_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component top_axi_fifo_mm_s_0_0;
   component top_keccak_core_0_0 is
   port (
     ap_clk : in STD_LOGIC;
     ap_rst_n : in STD_LOGIC;
-    input_stream_TDATA : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    input_stream_TVALID : in STD_LOGIC;
-    input_stream_TREADY : out STD_LOGIC;
-    input_stream_TKEEP : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    input_stream_TSTRB : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    input_stream_TLAST : in STD_LOGIC_VECTOR ( 0 to 0 );
-    output_stream_TDATA : out STD_LOGIC_VECTOR ( 63 downto 0 );
-    output_stream_TVALID : out STD_LOGIC;
-    output_stream_TREADY : in STD_LOGIC;
-    output_stream_TKEEP : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    output_stream_TSTRB : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    output_stream_TLAST : out STD_LOGIC_VECTOR ( 0 to 0 );
-    s_axi_control_AWVALID : in STD_LOGIC;
-    s_axi_control_AWREADY : out STD_LOGIC;
-    s_axi_control_AWADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s_axi_control_WVALID : in STD_LOGIC;
-    s_axi_control_WREADY : out STD_LOGIC;
-    s_axi_control_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_control_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_control_ARVALID : in STD_LOGIC;
-    s_axi_control_ARREADY : out STD_LOGIC;
-    s_axi_control_ARADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s_axi_control_RVALID : out STD_LOGIC;
-    s_axi_control_RREADY : in STD_LOGIC;
-    s_axi_control_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_control_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_control_BVALID : out STD_LOGIC;
-    s_axi_control_BREADY : in STD_LOGIC;
-    s_axi_control_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_AWVALID : in STD_LOGIC;
+    s_axi_AWREADY : out STD_LOGIC;
+    s_axi_AWADDR : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_WVALID : in STD_LOGIC;
+    s_axi_WREADY : out STD_LOGIC;
+    s_axi_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_ARVALID : in STD_LOGIC;
+    s_axi_ARREADY : out STD_LOGIC;
+    s_axi_ARADDR : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_RVALID : out STD_LOGIC;
+    s_axi_RREADY : in STD_LOGIC;
+    s_axi_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_BVALID : out STD_LOGIC;
+    s_axi_BREADY : in STD_LOGIC;
+    s_axi_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
     interrupt : out STD_LOGIC
   );
   end component top_keccak_core_0_0;
-  signal axi_fifo_mm_s_0_AXI_STR_TXD_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_fifo_mm_s_0_AXI_STR_TXD_TLAST : STD_LOGIC;
-  signal axi_fifo_mm_s_0_AXI_STR_TXD_TREADY : STD_LOGIC;
-  signal axi_fifo_mm_s_0_AXI_STR_TXD_TVALID : STD_LOGIC;
   signal keccak_core_0_interrupt : STD_LOGIC;
-  signal keccak_core_0_output_stream_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
-  signal keccak_core_0_output_stream_TLAST : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal keccak_core_0_output_stream_TREADY : STD_LOGIC;
-  signal keccak_core_0_output_stream_TVALID : STD_LOGIC;
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal smartconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal smartconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal smartconnect_0_M00_AXI_ARREADY : STD_LOGIC;
   signal smartconnect_0_M00_AXI_ARVALID : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal smartconnect_0_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal smartconnect_0_M00_AXI_AWREADY : STD_LOGIC;
   signal smartconnect_0_M00_AXI_AWVALID : STD_LOGIC;
   signal smartconnect_0_M00_AXI_BREADY : STD_LOGIC;
@@ -352,23 +271,6 @@ architecture STRUCTURE of top is
   signal smartconnect_0_M00_AXI_WREADY : STD_LOGIC;
   signal smartconnect_0_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal smartconnect_0_M00_AXI_WVALID : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal smartconnect_0_M01_AXI_ARREADY : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_ARVALID : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_AWADDR : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal smartconnect_0_M01_AXI_AWREADY : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_AWVALID : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_BREADY : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M01_AXI_BVALID : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal smartconnect_0_M01_AXI_RREADY : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M01_AXI_RVALID : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal smartconnect_0_M01_AXI_WREADY : STD_LOGIC;
-  signal smartconnect_0_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal smartconnect_0_M01_AXI_WVALID : STD_LOGIC;
   signal zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR : STD_LOGIC_VECTOR ( 39 downto 0 );
   signal zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -449,102 +351,40 @@ architecture STRUCTURE of top is
   signal zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_WVALID : STD_LOGIC;
   signal zynq_ultra_ps_e_0_pl_clk0 : STD_LOGIC;
   signal zynq_ultra_ps_e_0_pl_resetn0 : STD_LOGIC;
-  signal NLW_axi_fifo_mm_s_0_interrupt_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_fifo_mm_s_0_mm2s_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_fifo_mm_s_0_s2mm_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
-  signal NLW_clk_wiz_0_clk_out1_UNCONNECTED : STD_LOGIC;
-  signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
-  signal NLW_keccak_core_0_output_stream_TKEEP_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal NLW_keccak_core_0_output_stream_TSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_proc_sys_reset_0_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_smartconnect_0_M00_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_smartconnect_0_M00_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal NLW_smartconnect_0_M01_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal NLW_smartconnect_0_M01_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_zynq_ultra_ps_e_0_pl_clk1_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of reset_rtl : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL RST";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of reset_rtl : signal is "XIL_INTERFACENAME RST.RESET_RTL, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
 begin
-axi_fifo_mm_s_0: component top_axi_fifo_mm_s_0_0
-     port map (
-      axi_str_rxd_tdata(31 downto 0) => keccak_core_0_output_stream_TDATA(31 downto 0),
-      axi_str_rxd_tlast => keccak_core_0_output_stream_TLAST(0),
-      axi_str_rxd_tready => keccak_core_0_output_stream_TREADY,
-      axi_str_rxd_tvalid => keccak_core_0_output_stream_TVALID,
-      axi_str_txd_tdata(31 downto 0) => axi_fifo_mm_s_0_AXI_STR_TXD_TDATA(31 downto 0),
-      axi_str_txd_tlast => axi_fifo_mm_s_0_AXI_STR_TXD_TLAST,
-      axi_str_txd_tready => axi_fifo_mm_s_0_AXI_STR_TXD_TREADY,
-      axi_str_txd_tvalid => axi_fifo_mm_s_0_AXI_STR_TXD_TVALID,
-      interrupt => NLW_axi_fifo_mm_s_0_interrupt_UNCONNECTED,
-      mm2s_prmry_reset_out_n => NLW_axi_fifo_mm_s_0_mm2s_prmry_reset_out_n_UNCONNECTED,
-      s2mm_prmry_reset_out_n => NLW_axi_fifo_mm_s_0_s2mm_prmry_reset_out_n_UNCONNECTED,
-      s_axi_aclk => zynq_ultra_ps_e_0_pl_clk0,
-      s_axi_araddr(31 downto 0) => smartconnect_0_M00_AXI_ARADDR(31 downto 0),
-      s_axi_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
-      s_axi_arready => smartconnect_0_M00_AXI_ARREADY,
-      s_axi_arvalid => smartconnect_0_M00_AXI_ARVALID,
-      s_axi_awaddr(31 downto 0) => smartconnect_0_M00_AXI_AWADDR(31 downto 0),
-      s_axi_awready => smartconnect_0_M00_AXI_AWREADY,
-      s_axi_awvalid => smartconnect_0_M00_AXI_AWVALID,
-      s_axi_bready => smartconnect_0_M00_AXI_BREADY,
-      s_axi_bresp(1 downto 0) => smartconnect_0_M00_AXI_BRESP(1 downto 0),
-      s_axi_bvalid => smartconnect_0_M00_AXI_BVALID,
-      s_axi_rdata(31 downto 0) => smartconnect_0_M00_AXI_RDATA(31 downto 0),
-      s_axi_rready => smartconnect_0_M00_AXI_RREADY,
-      s_axi_rresp(1 downto 0) => smartconnect_0_M00_AXI_RRESP(1 downto 0),
-      s_axi_rvalid => smartconnect_0_M00_AXI_RVALID,
-      s_axi_wdata(31 downto 0) => smartconnect_0_M00_AXI_WDATA(31 downto 0),
-      s_axi_wready => smartconnect_0_M00_AXI_WREADY,
-      s_axi_wstrb(3 downto 0) => smartconnect_0_M00_AXI_WSTRB(3 downto 0),
-      s_axi_wvalid => smartconnect_0_M00_AXI_WVALID
-    );
-clk_wiz_0: component top_clk_wiz_0_0
-     port map (
-      clk_in1 => zynq_ultra_ps_e_0_pl_clk0,
-      clk_out1 => NLW_clk_wiz_0_clk_out1_UNCONNECTED,
-      locked => NLW_clk_wiz_0_locked_UNCONNECTED,
-      reset => reset_rtl
-    );
 keccak_core_0: component top_keccak_core_0_0
      port map (
       ap_clk => zynq_ultra_ps_e_0_pl_clk0,
       ap_rst_n => proc_sys_reset_0_peripheral_aresetn(0),
-      input_stream_TDATA(63 downto 32) => B"00000000000000000000000000000000",
-      input_stream_TDATA(31 downto 0) => axi_fifo_mm_s_0_AXI_STR_TXD_TDATA(31 downto 0),
-      input_stream_TKEEP(7 downto 0) => B"11111111",
-      input_stream_TLAST(0) => axi_fifo_mm_s_0_AXI_STR_TXD_TLAST,
-      input_stream_TREADY => axi_fifo_mm_s_0_AXI_STR_TXD_TREADY,
-      input_stream_TSTRB(7 downto 0) => B"11111111",
-      input_stream_TVALID => axi_fifo_mm_s_0_AXI_STR_TXD_TVALID,
       interrupt => keccak_core_0_interrupt,
-      output_stream_TDATA(63 downto 0) => keccak_core_0_output_stream_TDATA(63 downto 0),
-      output_stream_TKEEP(7 downto 0) => NLW_keccak_core_0_output_stream_TKEEP_UNCONNECTED(7 downto 0),
-      output_stream_TLAST(0) => keccak_core_0_output_stream_TLAST(0),
-      output_stream_TREADY => keccak_core_0_output_stream_TREADY,
-      output_stream_TSTRB(7 downto 0) => NLW_keccak_core_0_output_stream_TSTRB_UNCONNECTED(7 downto 0),
-      output_stream_TVALID => keccak_core_0_output_stream_TVALID,
-      s_axi_control_ARADDR(5 downto 0) => smartconnect_0_M01_AXI_ARADDR(5 downto 0),
-      s_axi_control_ARREADY => smartconnect_0_M01_AXI_ARREADY,
-      s_axi_control_ARVALID => smartconnect_0_M01_AXI_ARVALID,
-      s_axi_control_AWADDR(5 downto 0) => smartconnect_0_M01_AXI_AWADDR(5 downto 0),
-      s_axi_control_AWREADY => smartconnect_0_M01_AXI_AWREADY,
-      s_axi_control_AWVALID => smartconnect_0_M01_AXI_AWVALID,
-      s_axi_control_BREADY => smartconnect_0_M01_AXI_BREADY,
-      s_axi_control_BRESP(1 downto 0) => smartconnect_0_M01_AXI_BRESP(1 downto 0),
-      s_axi_control_BVALID => smartconnect_0_M01_AXI_BVALID,
-      s_axi_control_RDATA(31 downto 0) => smartconnect_0_M01_AXI_RDATA(31 downto 0),
-      s_axi_control_RREADY => smartconnect_0_M01_AXI_RREADY,
-      s_axi_control_RRESP(1 downto 0) => smartconnect_0_M01_AXI_RRESP(1 downto 0),
-      s_axi_control_RVALID => smartconnect_0_M01_AXI_RVALID,
-      s_axi_control_WDATA(31 downto 0) => smartconnect_0_M01_AXI_WDATA(31 downto 0),
-      s_axi_control_WREADY => smartconnect_0_M01_AXI_WREADY,
-      s_axi_control_WSTRB(3 downto 0) => smartconnect_0_M01_AXI_WSTRB(3 downto 0),
-      s_axi_control_WVALID => smartconnect_0_M01_AXI_WVALID
+      s_axi_ARADDR(6 downto 0) => smartconnect_0_M00_AXI_ARADDR(6 downto 0),
+      s_axi_ARREADY => smartconnect_0_M00_AXI_ARREADY,
+      s_axi_ARVALID => smartconnect_0_M00_AXI_ARVALID,
+      s_axi_AWADDR(6 downto 0) => smartconnect_0_M00_AXI_AWADDR(6 downto 0),
+      s_axi_AWREADY => smartconnect_0_M00_AXI_AWREADY,
+      s_axi_AWVALID => smartconnect_0_M00_AXI_AWVALID,
+      s_axi_BREADY => smartconnect_0_M00_AXI_BREADY,
+      s_axi_BRESP(1 downto 0) => smartconnect_0_M00_AXI_BRESP(1 downto 0),
+      s_axi_BVALID => smartconnect_0_M00_AXI_BVALID,
+      s_axi_RDATA(31 downto 0) => smartconnect_0_M00_AXI_RDATA(31 downto 0),
+      s_axi_RREADY => smartconnect_0_M00_AXI_RREADY,
+      s_axi_RRESP(1 downto 0) => smartconnect_0_M00_AXI_RRESP(1 downto 0),
+      s_axi_RVALID => smartconnect_0_M00_AXI_RVALID,
+      s_axi_WDATA(31 downto 0) => smartconnect_0_M00_AXI_WDATA(31 downto 0),
+      s_axi_WREADY => smartconnect_0_M00_AXI_WREADY,
+      s_axi_WSTRB(3 downto 0) => smartconnect_0_M00_AXI_WSTRB(3 downto 0),
+      s_axi_WVALID => smartconnect_0_M00_AXI_WVALID
     );
 proc_sys_reset_0: component top_proc_sys_reset_0_0
      port map (
@@ -561,11 +401,11 @@ proc_sys_reset_0: component top_proc_sys_reset_0_0
     );
 smartconnect_0: component top_smartconnect_0_0
      port map (
-      M00_AXI_araddr(31 downto 0) => smartconnect_0_M00_AXI_ARADDR(31 downto 0),
+      M00_AXI_araddr(6 downto 0) => smartconnect_0_M00_AXI_ARADDR(6 downto 0),
       M00_AXI_arprot(2 downto 0) => NLW_smartconnect_0_M00_AXI_arprot_UNCONNECTED(2 downto 0),
       M00_AXI_arready => smartconnect_0_M00_AXI_ARREADY,
       M00_AXI_arvalid => smartconnect_0_M00_AXI_ARVALID,
-      M00_AXI_awaddr(31 downto 0) => smartconnect_0_M00_AXI_AWADDR(31 downto 0),
+      M00_AXI_awaddr(6 downto 0) => smartconnect_0_M00_AXI_AWADDR(6 downto 0),
       M00_AXI_awprot(2 downto 0) => NLW_smartconnect_0_M00_AXI_awprot_UNCONNECTED(2 downto 0),
       M00_AXI_awready => smartconnect_0_M00_AXI_AWREADY,
       M00_AXI_awvalid => smartconnect_0_M00_AXI_AWVALID,
@@ -580,25 +420,6 @@ smartconnect_0: component top_smartconnect_0_0
       M00_AXI_wready => smartconnect_0_M00_AXI_WREADY,
       M00_AXI_wstrb(3 downto 0) => smartconnect_0_M00_AXI_WSTRB(3 downto 0),
       M00_AXI_wvalid => smartconnect_0_M00_AXI_WVALID,
-      M01_AXI_araddr(5 downto 0) => smartconnect_0_M01_AXI_ARADDR(5 downto 0),
-      M01_AXI_arprot(2 downto 0) => NLW_smartconnect_0_M01_AXI_arprot_UNCONNECTED(2 downto 0),
-      M01_AXI_arready => smartconnect_0_M01_AXI_ARREADY,
-      M01_AXI_arvalid => smartconnect_0_M01_AXI_ARVALID,
-      M01_AXI_awaddr(5 downto 0) => smartconnect_0_M01_AXI_AWADDR(5 downto 0),
-      M01_AXI_awprot(2 downto 0) => NLW_smartconnect_0_M01_AXI_awprot_UNCONNECTED(2 downto 0),
-      M01_AXI_awready => smartconnect_0_M01_AXI_AWREADY,
-      M01_AXI_awvalid => smartconnect_0_M01_AXI_AWVALID,
-      M01_AXI_bready => smartconnect_0_M01_AXI_BREADY,
-      M01_AXI_bresp(1 downto 0) => smartconnect_0_M01_AXI_BRESP(1 downto 0),
-      M01_AXI_bvalid => smartconnect_0_M01_AXI_BVALID,
-      M01_AXI_rdata(31 downto 0) => smartconnect_0_M01_AXI_RDATA(31 downto 0),
-      M01_AXI_rready => smartconnect_0_M01_AXI_RREADY,
-      M01_AXI_rresp(1 downto 0) => smartconnect_0_M01_AXI_RRESP(1 downto 0),
-      M01_AXI_rvalid => smartconnect_0_M01_AXI_RVALID,
-      M01_AXI_wdata(31 downto 0) => smartconnect_0_M01_AXI_WDATA(31 downto 0),
-      M01_AXI_wready => smartconnect_0_M01_AXI_WREADY,
-      M01_AXI_wstrb(3 downto 0) => smartconnect_0_M01_AXI_WSTRB(3 downto 0),
-      M01_AXI_wvalid => smartconnect_0_M01_AXI_WVALID,
       S00_AXI_araddr(39 downto 0) => zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_ARADDR(39 downto 0),
       S00_AXI_arburst(1 downto 0) => zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_ARCACHE(3 downto 0),

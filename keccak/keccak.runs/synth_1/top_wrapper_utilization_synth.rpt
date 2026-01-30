@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Dec 25 01:36:10 2025
+| Date         : Mon Jan 26 21:35:34 2026
 | Host         : DESKTOP-DI4989O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
 | Design       : top_wrapper
@@ -99,7 +99,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------------+------+-------+------------+-----------+-------+
 |     Site Type    | Used | Fixed | Prohibited | Available | Util% |
 +------------------+------+-------+------------+-----------+-------+
-| Bonded IOB       |    1 |     0 |          0 |       189 |  0.53 |
+| Bonded IOB       |    0 |     0 |          0 |       189 |  0.00 |
 |   HPIOB_M        |    0 |     0 |          0 |        58 |  0.00 |
 |   HPIOB_S        |    0 |     0 |          0 |        58 |  0.00 |
 |   HDIOB_M        |    0 |     0 |          0 |        35 |  0.00 |
@@ -171,9 +171,6 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| INBUF    |    1 |                 I/O |
-| IBUFCTRL |    1 |              Others |
-+----------+------+---------------------+
 
 
 9. Black Boxes
@@ -186,8 +183,6 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | top_smartconnect_0_0    |    1 |
 | top_proc_sys_reset_0_0  |    1 |
 | top_keccak_core_0_0     |    1 |
-| top_clk_wiz_0_0         |    1 |
-| top_axi_fifo_mm_s_0_0   |    1 |
 +-------------------------+------+
 
 

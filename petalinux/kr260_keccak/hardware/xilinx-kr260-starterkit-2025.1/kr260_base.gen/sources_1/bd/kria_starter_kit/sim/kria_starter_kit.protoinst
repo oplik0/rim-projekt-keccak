@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"kria_starter_kit": {
+			"proto_instances": {
+			}
+		}
+	}
+}

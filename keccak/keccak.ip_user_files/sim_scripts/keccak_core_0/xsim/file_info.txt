@@ -1,6 +1,0 @@
-keccak_pkg.vhd,vhdl,xil_defaultlib,../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_pkg.vhd,incdir="../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef"
-keccak_f1600.vhd,vhdl,xil_defaultlib,../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_f1600.vhd,incdir="../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef"
-keccak_top_control_s_axi.vhd,vhdl,xil_defaultlib,../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_top_control_s_axi.vhd,incdir="../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef"
-keccak_top.vhd,vhdl,xil_defaultlib,../../../../keccak.gen/sources_1/ip/keccak_core_0/src/keccak_top.vhd,incdir="../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef"
-keccak_core_0.vhd,vhdl,xil_defaultlib,../../../../keccak.gen/sources_1/ip/keccak_core_0/sim/keccak_core_0.vhd,incdir="../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef"
-glbl.v,Verilog,xil_defaultlib,glbl.v
